@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <style>
+        #wrap{width:500px;height:300px;margin:auto auto; border:1px solid #000; position:relative;}
+        #wrap img{ position:absolute;top:0;left:0; overflow: hidden}
+        /*#wrap img:nth-of-type(1){ left:200px;top:200px; z-index:0;}*/
+        /*#wrap img:nth-of-type(2){ left:300px;top:180px; z-index:1;}*/
+        /*#wrap img:nth-of-type(3){ left:100px;top:100px; z-index:2;}*/
+        /*#wrap img:nth-of-type(4){ left:400px;top:110px; z-index:3;}*/
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <img src="../image/aierlan.jpg" />
+<!--    <img src="../image/jiazhou.jpg" />
+    <img src="../image/xila.jpg" />
+    <img src="../image/tuerqi.jpg" />-->
+</div>
+<script>
+    var oWrap=document.getElementById("wrap");
+    var aImg=oWrap.getElementsByTagName("img");
+    var iMax=4;
+    //获取图片的初始位置
+    for(var i=0;i<aImg.length;i++){
+        aImg[i].startX=parseInt(getStyle(aImg[i],'left'))
+        aImg[i].startY=parseInt(getStyle(aImg[i],'right'))
+    }
+    oWrap.onmousemove=function(ev){
+        ev=ev||window.event;
+        //获取鼠标的位置与大盒子中心点位置的距离
+        var iX=ev.clientX-(oWrap.offsetLeft+this.offsetWidth/2)
+        for(var i=0;i<aImg.length;i++){
+            //获取每个img的z-index
+            var iZindex=getStyle(aImg[i],'zIndex')
+            //Zindex越大移动的相对距离越小
+            var iDisL=-parseInt(iX/iMax*(iMax-iZindex)/5)
+            //图片的距离等于原先的距离加上计算的距离
+            aImg[i].style.left=aImg[i].startX+iDisL+'px'
+            aImg[i].style.top=aImg[i].startY+iDisL+'px'
+        }
+    }
+    function getStyle(obj,attr)
+    {
+        if( obj.currentStyle){
+            return obj.currentStyle[attr];
+        }
+        return getComputedStyle(obj)[attr];
+    }
+</script>
+</body>
+</html>
