@@ -6,50 +6,112 @@
 }
 
 body {
-    /*background-color:#2f3238;*/
+    background-color:#111111; 
+    /*background: rgba(0, 0, 0, 0.85);*/
     overflow: hidden;
-    font-family: "Source Sans Pro", Arial, sans-serif;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 1.5;
-    color: #7f7f7f;
-    color: rgba(255, 255, 255, 0.7);
-    background: #fff;
-    height: 100%;
+}
+
+.header {
     position: relative;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 0px;
+    /*background-color: #2f3238;*/
 }
 
-input, button, select, textarea {
-    outline: none;
+.header a {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    /*color: white;*/
 }
 
-ul, li, dl, ol {
+.header a:hover {
+    color: white;
+}
+
+
+.header .left {
+    display: inline-block;
+    width: 33.3%;
+}
+
+.header .left img {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.logo {
+    display: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.header .right {
+    width: 66.6%;
+    float: right;
+}
+
+.rightContent {
+    display: block;
+    margin-top: 25px;
+    float: right;
+}
+
+.rightLink {
+    display: block;
+    margin-left: 20px;
+    margin-top: 5px;
+    float: right;
+}
+
+.header .right ul {
+    display: block;
+    margin-bottom: 0;
+    font-size: 16px;
+    padding-left: 0;
     list-style: none;
 }
 
-a {
-    color: #666;
-    text-decoration: none;
+.header .right ul li {
+    float: left;
+    position: relative;
 }
+
+.header .right ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: #C2C1C1;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    -moz-transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+    transition: all 2s ease;
+    /*color:#000;*/
+}
+
+.header .right ul li a:hover {
+    color: white;
+}
+
+.header .right .rightWrap img {
+    width: 48px;
+    height: 48px;
+}
+
 .bigBox{
     max-width: 760px;
     min-height: 600px;
-    margin: 5em auto 5em auto;
+    margin: 2em auto 2em auto;
     position: relative;
-    background: rgba(0, 0, 0, 0.85);
     overflow: hidden;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    -ms-border-radius: 7px;
-    border-radius: 7px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
 }
 .profileIcon {
+    color: #acacac;
     width: 80%;
     margin: 0 auto;
     height: 80px;
@@ -59,74 +121,89 @@ a {
     font-weight: bold;
 }
 
-.bcon {
-    width: 80%;
-    margin: 0px auto 80px auto;
-}
 
-/* .bcon h1{ border-bottom:1px solid #eee; padding:0 10px;}
-.bcon h1 b{ font:bold 14px/40px '宋体'; border-top:2px solid #3492D1; padding:0 8px; margin-top:-1px; display:inline-block;} */
-
-.list_lh {
+.scrollText {
     width: 95%;
-    height: 80%;
+    height: 600px;
     margin: 0 auto;
     /*background-image: url("../image/blackboard.png");*/
     opacity:1;
     background-size: 100% 100%;
     background-repeat: repeat;
-    outline-style: groove;
     overflow: hidden;
 }
 
-.list_lh ul{
+.scrollText ul{
     /*margin: 40px 40px;*/
 }
-.list_lh li {
+.scrollText li {
     margin: 50px;
 }
 
-.list_lh li.lieven {
+.scrollText li.lieven {
     background: #F0F2F3;
 }
 
-.list_lh li p {
-    color: white;
+.scrollText li p {
+    color: #acacac;
     font: normal 12px/24px Arial;
-    font-size: 18px;
+    font-size: 16px;
     /*height: 20px;*/
     line-height: 20px;
 }
 
-.list_lh li p a {
+.scrollText li p a {
     float: left;
 }
 
-.list_lh li p em {
-    width: 80px;
-    font: normal 12px/24px Arial;
-    color: #FF3300;
-    float: right;
-    display: inline-block;
+/*右边联系方式部分*/
+#right {
+    position: fixed;
+    right: -180px;
+    width: 250px;
+    bottom: 200px;
 }
 
-.list_lh li p span {
-    color: #999;
-    float: right;
+#right .item {
+    float: left;
+    margin: 10px;
+}
+#right .pic {
+    float: left;
+    display: relative;
+    width: 50px;
+    height: 50px;
 }
 
-.list_lh li p a.btn_lh {
-    background: #28BD19;
-    height: 17px;
-    line-height: 17px;
-    color: #fff;
-    padding: 0 5px;
-    margin-top: 4px;
-    display: inline-block;
-    float: right;
+#right .pic img {
+    display: absolute;
+    top: 0;
+    left: 0;
 }
 
-.btn_lh:hover {
-    color: #fff;
-    text-decoration: none;
+
+#right .liner {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 1px;
 }
+
+#right .contactInfo {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 70px;
+    color: white;
+    font-size: 14px;
+}
+
+#right .contactInfo .text {
+    position: absolute;
+    bottom: 0;
+}
+
+#right .qrcode {
+
+}
+
