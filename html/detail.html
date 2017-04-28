@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>内容详情页</title>
+    <link type="text/css" href="../css/detail.css" rel="stylesheet"/>
+    <link rel="SHORTCUT ICON" href="../image/websiteIcon.ico">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
+    <script type="text/javascript" src="../js/lib/easySlider.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){	
+			$("#contentWrqapper").easySlider({
+				auto: true,
+				continuous: true,
+				nextId: "previoesButton",
+				prevId: "nextButton"
+			});
+		});
+
+    </script>
 </head>
 <body>
-
+<div>
+	<div class="header">
+	    <div class="left">
+	    <!-- logo部分 -->
+	        <div class="worldIcon">
+	            <a href="index.html">
+	                <image src="../image/world.png" alt="worldicon"></image>
+	            </a>
+	            <span class="logo">
+	            </span>
+	        </div>
+	    </div>
+	    <div class="button">
+	    	<img src="../image/icon/left.svg" width="30px" height="30px" id="previoesButton">
+	    	<img src="../image/icon/close.svg"  width="30px" height="30px" id="closeButton">
+	    	<img src="../image/icon/right.svg"  width="30px" height="30px" id="nextButton">
+	    </div>
+	    <div class="right">
+	        <div class="rightContent">
+	            <div class="rightLink">
+	                <ul>
+	                    <li>
+	                        <a href="index.html">动态</a>
+	                    </li>
+	                    <li>
+	                        <a href="html/scroll.html">关于</a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="bgPic" id="contentWrqapper">
+		<ul>
+			<li><a href=""><img src="../image/jialebi/jialebi1.jpg" alt="" /></a></li>
+		    <li><a href=""><img src="../image/jialebi/jialebi2.jpg" alt="" /></a></li>
+		    <li><a href=""><img src="../image/jialebi/jialebi3.jpg" alt="" /></a></li>
+		    <li><a href=""><img src="../image/jialebi/jialebi4.jpg" alt="" /></a></li>
+		    <li><a href=""><img src="../image/jialebi/jialebi5.jpg" alt="" /></a></li>
+		</ul>
+		<span class="text">
+			
+		</span>
+	</div>
+</div>
 </body>
 </html>
