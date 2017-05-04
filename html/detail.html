@@ -10,6 +10,29 @@
     <script type="text/javascript" src="../js/scroll.js"></script>
     <script type="text/javascript" src="../js/lib/jquery.fullPage.min.js"></script>
     <script type="text/javascript">
+    //禁用鼠标滚轮事件
+		function disabledMouseWheel() {
+		    if (document.addEventListener) {
+		        document.addEventListener('DOMMouseScroll', scrollFunc, false);
+		    } //W3C  
+		    window.onmousewheel = document.onmousewheel = scrollFunc; //IE/Opera/Chrome  
+		}
+
+		function scrollFunc(evt) {
+		    evt = evt || window.event;
+		    if (evt.preventDefault) {
+		        // Firefox  
+		        evt.preventDefault();
+		        evt.stopPropagation();
+		    } else {
+		        // IE  
+		        evt.cancelBubble = true;
+		        evt.returnValue = false;
+		    }
+		    return false;
+		}
+		window.onload=disabledMouseWheel;
+		
 		$(function(){
 			$('#picContent').fullpage({
 				anchors: ['page1', 'page2', 'page3', 'page4'],
@@ -29,12 +52,6 @@
 			$next.click(function(){
 				$.fn.fullpage.moveSlideRight();
 			});
-
-
-			function clickToTab (section, index) {
-
-				$.fn.fullpage.moveTo();
-			}
 
 			/**
              * 执行方法，有两个参数
