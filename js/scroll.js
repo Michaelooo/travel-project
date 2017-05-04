@@ -65,7 +65,7 @@
  * rowHeight，表示滚动行的高度
  */
 $(function() {
-    $("div.scrollText").myScroll({
+    $("#scrollText").myScroll({
         speed: 40,
         rowHeight: 600
     });

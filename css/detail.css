@@ -6,17 +6,18 @@
 }
 
 body {
-    background-color:#111111; 
+    /*background-color:#111111; */
     /*background: rgba(0, 0, 0, 0.85);*/
     overflow: hidden;
 }
 
+
 .header {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100px;
-    margin: 0 auto;
-    padding: 0px;
+    z-index: 1000;
     /*background-color: #2f3238;*/
 }
 
@@ -52,6 +53,8 @@ body {
 
 .header .button {
     display: inline-block;
+    position: absolute;
+    top: 30px;
     width: 33.3%;
     text-align: center;
 }
@@ -111,3 +114,126 @@ body {
     width: 48px;
     height: 48px;
 }
+
+/*content*/
+#contentWrapper {
+    width: 100%
+}
+
+#picContent {
+    display: block;
+}
+
+.spanText {
+    color: white;
+    font-size: 18px;
+    width: 800px;
+    height: 600px;
+    float: right;
+}
+
+.spanText span {
+    color: white;
+    font-size: 50px;
+    float: right;
+    margin-right: 80px;
+    margin-bottom: 95px;
+}
+
+.scrollText {
+    width: 80%;
+    height: 400px;
+    float: right;
+    margin-right: 90px;
+    /* background-image: url(../image/blackboard.png); */
+    opacity: 1;
+    background-size: 100% 100%;
+    background-repeat: repeat;
+    overflow: hidden;
+}
+
+.scrollText ul{
+    /*margin: 40px 40px;*/
+}
+.scrollText li {
+    margin: 20px 0 20px 250px;
+    list-style: none;
+}
+
+.scrollText li.lieven {
+    background: #F0F2F3;
+}
+
+.scrollText li p {
+    color: #ffffff;
+    font: normal 12px/24px Arial;
+    font-size: 18px;
+    /*height: 20px;*/
+    line-height: 22px;
+}
+
+.scrollText li p a {
+    float: left;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+}
+
+/*底部链接部分*/
+
+#footer {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    z-index: 1000;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+#footer ul {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+#footer ul li {
+    list-style: none;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 50px;
+    width: 270px;
+    height: 50px;
+    border-left: 1px solid #ffffff;
+    margin-right: 5px;
+}
+
+#footer ul li :active {
+    list-style: none;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 50px;
+    width: 270px;
+    height: 50px;
+    border-left: 1px solid #ffffff;
+    margin-right: 5px;
+}
+
+#footer ul li:last-child {
+    border-right: 1px solid #ffffff;
+    margin-right: 0px;
+}
+
+#footer ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 50px;
+    height: 50px;
+    color: #ffffff;
+}
+
