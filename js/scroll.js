@@ -57,27 +57,3 @@
 // $(document).ready(function(){
 // 	$('.list_lh li:even').addClass('lieven');
 // })
-
-
-/**
- * 执行方法，有两个参数
- * speed，表示滚动速度，数字越大表示越慢，
- * rowHeight，表示滚动行的高度
- */
-$(function() {
-    $("#scrollText").myScroll({
-        speed: 40,
-        rowHeight: 600
-    });
-});
-
-/*
-浮动效果实现
- */
-$(function(){
-    $("#right").hover(function(){
-        $(this).animate({right: "0px"}, 200);
-    }, function(){
-        $(this).animate({right: "-180px"}, 200);
-    });
-});
