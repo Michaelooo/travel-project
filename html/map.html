@@ -3,15 +3,289 @@
 <head>
     <meta charset="utf-8">
     <title>无标题文档</title>
+    <link rel="SHORTCUT ICON" href="../image/websiteIcon.ico">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.min.js"></script>
     <style>
+        body,html {width: 100%;height: 100%;}
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            /*background-color: #2f3238;*/
+        }
+
+        .header a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            /*color: white;*/
+        }
+
+        .header a:hover {
+            color: white;
+        }
+
+
+        .header .left {
+            display: inline-block;
+            width: 33.3%;
+        }
+
+        .header .left img {
+            margin-left: 20px;
+            margin-top: 20px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo {
+            display: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        .header .button {
+            display: inline-block;
+            position: absolute;
+            top: 30px;
+            width: 33.3%;
+            text-align: center;
+        }
+
+        .header .button img {
+            margin: 5px;
+        }
+
+        .header .right {
+            float: right;
+        }
+        #picWrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    	.blackBoard {
+			width: 750px;
+            height: 100%;
+            background-color: black;
+            position: absolute;
+            left: 0px;
+            z-index: 100;
+
+    	}
+        .scrollText {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            opacity: 1;
+            background-size: 100% 100%;
+            background-repeat: repeat;
+            overflow: auto;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollText ul{
+            margin: 120px 80px;
+            display: block;
+            width: 500px;
+            height: 800px;
+            position: relative;
+        }
+        .scrollText li {
+            list-style: none;
+        }
+
+        .scrollText li span{
+            font-size:20px;
+            color: gray;
+            opacity: 0.5;
+        }
+
+        .scrollText li h3{
+            color: #ffffff;
+            font: normal 12px/24px Arial;
+            font-size: 24px;
+            opacity: 0.5;
+        }
+        .scrollText li.lieven {
+            background: #F0F2F3;
+        }
+
+        .scrollText li p {
+            color: #ffffff;
+            font: normal 12px/24px Arial;
+            font-size: 18px;
+            height: 200px;
+            line-height: 24px;
+            opacity: 0.5;
+        }
+
+        .scrollText li p a {
+            float: left;
+        }
+        .scrollPic {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
     </style>
+    <script>
+        $(function(){
+            $('#picContent').fullpage({
+            });
+            $('.fp-controlArrow').hide();
+            //应该为鼠标点击之后自动播放
+
+            var $picWrap = $('#picWrap');
+            var $blackBoard = $('#blackBoard');
+            var $title = $('#blackBoard h3');
+            var $smallText = $('#blackBoard .smallText');
+            var $pText = $('#blackBoard p');
+            $picWrap.click(function(){
+                $blackBoard.animate({left: "0px"}, 500);
+                $title.animate({opacity: 1},500);
+                $smallText.animate({opacity: 1},500);
+                $pText.animate({opacity: 1},500);
+            });
+
+            //点击之后的操作
+            // var $img = $('#clickButton img');
+            // $picWrap.click(function(){
+            //     $img.show();
+            //     $blackBoard.animate({left: "-750px"}, 500);
+            // })
+            //     //bind event
+            // var $prev = $('#previousButton');
+            // var $close = $('#closeButton');
+            // var $next = $('#nextButton');
+
+            // $prev.click(function(){
+            //     $.fn.fullpage.moveSlideLeft();
+            // });
+            // $next.click(function(){
+            //     $.fn.fullpage.moveSlideRight();
+            // });
+            // $close.click(function(){
+            //     $img.hide();
+            //     $blackBoard.animate({left: "0px"}, 500);
+            // });
+        });
+    </script>
 </head>
 <body>
-<div id="wrap">
-
+<!-- 包括图片滚动的部分 -->
+<!-- head -->
+<div class="header">
+    <div class="left">
+    <!-- logo部分 -->
+        <div class="worldIcon">
+            <a href="index.html">
+                <image src="../image/world.png" alt="worldicon"></image>
+            </a>
+            <span class="logo">
+            </span>
+        </div>
+    </div>
+    control button
+    <div class="button" id="clickButton">
+        <img src="../image/icon/left.svg" style="display: none" width="30px" height="30px" id="previousButton">
+        <img src="../image/icon/close.svg" style="display: none" width="30px" height="30px" id="closeButton">
+        <img src="../image/icon/right.svg" style="display: none" width="30px" height="30px" id="nextButton">
+    </div>
 </div>
-<script>
-
-</script>
+<!-- 图片部分 -->
+<div id="picWrap">
+	<div class="blackBoard" id="blackBoard">
+        <div class="scrollText" id="scrollText">
+            <ul>
+                <li>
+                    <h3>人文故事</h3>
+                    <span class="smallText">Cultural & History</span>
+                    <p>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                </li>
+                <li>
+                    <h3>人文故事</h3>
+                    <span class="smallText">Cultural & History</span>
+                    <p>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                </li>
+                <li>
+                    <h3>人文故事</h3>
+                    <span class="smallText">Cultural & History</span>
+                    <p>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                </li>
+                <li>
+                    <h3>人文故事</h3>
+                    <span class="smallText">Cultural & History</span>
+                    <p>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                </li>
+                <li>
+                    <h3>人文故事</h3>
+                    <span class="smallText">Cultural & History</span>
+                    <p>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                </li>
+                <li>
+                    <h3>人文故事</h3>
+                    <span class="smallText">Cultural & History</span>
+                    <p>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                </li>
+            </ul>
+    	</div>
+    </div>
+	<div class="scrollPic">
+		<div class="picContent" id="picContent">
+			<div class="section">
+				<div class="slide" style="background-image: url(../image/jialebi/jialebi1.jpg);opacity: 0.9;"></div>
+                <div class="slide" style="background-image: url(../image/jialebi/jialebi2.jpg);opacity: 0.9;"></div>
+                <div class="slide" style="background-image: url(../image/jialebi/jialebi3.jpg);opacity: 0.9;"></div>
+                <div class="slide" style="background-image: url(../image/jialebi/jialebi4.jpg);opacity: 0.9;"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 右上角，右下角 -->
+<div class="rightTop">
+    
+</div>
+<div class="rightBottom"></div>
 </body>
 </html>
