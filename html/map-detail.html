@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="SHORTCUT ICON" href="../image/websiteIcon.ico">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.min.js"></script>
+    <title>地图页面</title>
+</head>
+
+<body style="height:calc(100vh);margin-top:0px">
+    <!-- map -->
+    <link rel="stylesheet" href="../css/map.css">
+    <link rel="stylesheet" href="../css/mapScroll.css">
+    <div class="m-map">
+        <ul class="m-map-menu">
+            <li>无疆之旅</li>
+            <li>赤子之旅</li>
+            <li>粹心之旅</li>
+            <li>探秘之旅</li>
+            <li>寻风之旅</li>
+            <li>斑斓之旅</li>
+        </ul>
+        <ul class="m-map-main" style="background-image:url(../image/map.jpg);width:2766px;height:1414px">
+            <li style="top:298px;left:1483px">
+                <div>
+                    <div style="background-image:url(../image/temp/t_jiazhou1.jpg)"></div>
+                    <h2><span>南非&纳米比亚111<br>SouthAfrica & Namibia</span>无疆之旅</h2>
+                </div>
+            </li>
+            <li style="top:222px;left:1403px">
+                <div>
+                    <div style="background-image:url(../image/temp/t_jiazhou1.jpg)"></div>
+                    <h2><span>南非&纳米比亚222<br>SouthAfrica & Namibia</span>无疆之旅</h2>
+                </div>
+            </li>
+            <li style="top:377px;left:1474px">
+                <div>
+                    <div style="background-image:url(../image/temp/t_jiazhou1.jpg)"></div>
+                    <h2><span>南非&纳米比亚333<br>SouthAfrica & Namibia</span>无疆之旅</h2>
+                </div>
+            </li>
+            <li style="top:523px;left:1548px">
+                <div>
+                    <div style="background-image:url(../image/temp/t_jiazhou1.jpg)"></div>
+                    <h2><span>南非&纳米比亚444<br>SouthAfrica & Namibia</span>无疆之旅</h2>
+                </div>
+            </li>
+            <li style="top:342px;left:1667px">
+                <div>
+                    <div style="background-image:url(../image/temp/t_jiazhou1.jpg)"></div>
+                    <h2><span>南非&纳米比亚555<br>SouthAfrica & Namibia</span>无疆之旅</h2>
+                </div>
+            </li>
+            <li style="top:134px;left:1084px">
+                <div>
+                    <div style="background-image:url(../image/temp/t_jiazhou1.jpg)"></div>
+                    <h2><span>南非&纳米比亚666<br>SouthAfrica & Namibia</span>无疆之旅</h2>
+                </div>
+            </li>
+        </ul>
+        <ul class="m-map-detail">
+            <li>
+                <!-- head -->
+                <div class="header">
+                    <div class="left">
+                    <!-- logo部分 -->
+                        <div class="worldIcon">
+                            <a href="index.html">
+                                <image src="../image/world.png" alt="worldicon"></image>
+                            </a>
+                            <span class="logo">
+                            </span>
+                        </div>
+                    </div>
+                    <!-- control button -->
+                    <div class="button" id="clickButton">
+                        <img src="../image/icon/left.svg" style="display: none" width="30px" height="30px" id="previousButton">
+                        <img src="../image/icon/close.svg" style="display: none" width="30px" height="30px" id="closeButton">
+                        <img src="../image/icon/right.svg" style="display: none" width="30px" height="30px" id="nextButton">
+                    </div>
+                </div>
+                <!-- 图片部分 -->
+                <div id="picWrap">
+                    <div class="blackBoard" id="blackBoard">
+                        <div class="scrollText" id="scrollText">
+                            <ul>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="scrollPic">
+                        <div class="picContent" id="picContent">
+                            <div class="section">
+                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
+                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
+                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
+                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
+                                <!-- <div class="slide" style="background-image: url(../image/jialebi/jialebi1.jpg);opacity: 0.9;"></div>
+                                <div class="slide" style="background-image: url(../image/jialebi/jialebi2.jpg);opacity: 0.9;"></div>
+                                <div class="slide" style="background-image: url(../image/jialebi/jialebi3.jpg);opacity: 0.9;"></div>
+                                <div class="slide" style="background-image: url(../image/jialebi/jialebi4.jpg);opacity: 0.9;"></div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="_close">X</div>
+            </li>
+            <li>
+                <div class="_left">xxxxxxxxx222</div>
+                <div class="_right" data-src="img/temp/jiazhou1.jpg"></div>
+                <div class="_close">X</div>
+            </li>
+            <li>
+                <div class="_left">xxxxxxxxx333</div>
+                <div class="_right" data-src="img/temp/jiazhou1.jpg"></div>
+                <div class="_close">X</div>
+            </li>
+            <li>
+                <div class="_left">xxxxxxxxx444</div>
+                <div class="_right" data-src="img/temp/jiazhou1.jpg"></div>
+                <div class="_close">X</div>
+            </li>
+            <li>
+                <div class="_left">xxxxxxxxx555</div>
+                <div class="_right" data-src="img/temp/jiazhou1.jpg"></div>
+                <div class="_close">X</div>
+            </li>
+            <li>
+                <div class="_left">xxxxxxxxx666</div>
+                <div class="_right" data-src="img/temp/jiazhou1.jpg"></div>
+                <div class="_close">X</div>
+            </li>
+        </ul>
+    </div>
+    <script src="../js/map.js"></script>
+    <!-- map end -->
+</body>
+
+</html>
