@@ -20,6 +20,61 @@ $(function() {
 		}, 300);
 	};
 
+	var _go = function(target) {
+		var $scrollPic = $('li._open .scrollPic');
+		var localWitdh = document.body.clientWidth;
+		var max_width = $scrollPic.width();
+		var pos = $scrollPic.position();
+		switch (target) {
+			case 'left':
+				var target_width = localWitdh - pos.left;
+				if (Math.abs(target_width) < max_width) {
+					$scrollPic.animate({
+							left: target_width
+					}, 500, 'linear', function() {});
+				} else if (Math.abs(target_width) >= max_width) {
+					$scrollPic.animate({
+							left: max_width
+					}, 500, 'linear', function() {});
+				}
+				break;
+			case 'right':
+				var target_width = pos.left - localWitdh;
+				if (Math.abs(target_width) < max_width) {
+					$scrollPic.animate({
+							left: target_width
+					}, 500, 'linear', function() {});
+				} else if (Math.abs(target_width) >= max_width) {
+					$scrollPic.animate({
+							left: 0
+					}, 500, 'linear', function() {});
+				}
+				break;
+		}
+	}
+
+	var $li = $('li._open .scrollPic >ul >li');
+	var curIndex = 0,
+	lastIndex = $li.length - 1;
+
+	var switchPic = function (index) {
+		$li.removeClass('_current').eq(index).addClass('_current');
+		var prevIndex = index === 0 ? lastIndex : index - 1,
+			nextIndex = index === lastIndex ? 0 : index + 1;
+		$li.eq(index).children('[data-src]')
+			.add($li.eq(prevIndex).children('[data-src]'))
+			.add($li.eq(nextIndex).children('[data-src]'))
+			.each(function() {
+				var $this = $(this);
+				var src = $this.data('src');
+				var $img = $('<img>');
+				$img[0].onload = function() {
+					$this.addClass('_loaded').removeAttr('data-src')
+						.css('backgroundImage', 'url(' + src + ')');
+				};
+				$img.attr('src', src);
+		});
+	}
 
 	//事件
 	$('.m-map-menu').on('click', 'li', function() {
@@ -95,11 +150,16 @@ $(function() {
 		var $next = detailWrap.find('.nextButton');
 
 		$prev.click(function() {
-			
-			$.fn.fullpage.moveSlideLeft();
+			var prevIndex = curIndex === 0 ? lastIndex : curIndex - 1;
+			switchPic(prevIndex);
+			curIndex = prevIndex;
+			// $.fn.fullpage.moveSlideLeft();
 		});
 		$next.click(function() {
-			$.fn.fullpage.moveSlideRight();
+			var nextIndex = curIndex === lastIndex ? 0 : curIndex + 1;
+			switchPic(nextIndex);
+			curIndex = nextIndex;
+			// $.fn.fullpage.moveSlideRight();
 		});
 		$close.click(function() {
 			$img.hide();
@@ -110,9 +170,9 @@ $(function() {
 		});
 	});
 
-	$('.m-map-detail .picWrap').fullpage();
-	$.fn.fullpage.setAllowScrolling();
-	$('.fp-controlArrow').hide();
+	// $('.m-map-detail .picWrap').fullpage();
+	// $.fn.fullpage.setAllowScrolling();
+	// $('.fp-controlArrow').hide();
 
 	var _id;
 	$(window).resize(function() {
@@ -123,7 +183,7 @@ $(function() {
 	});
 
 	//lazyload
-	$(".picContent .section .slide").lazyload({
+	$(".scrollPic .slide").lazyload({
 		threshold: 0,
 		effect: "fadeIn",
 		event: 'mouseover',
@@ -131,5 +191,6 @@ $(function() {
 	});
 
 	//初始化
+	switchPic(0);
 	switchover(0);
 });
