@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="../css/reset.css">
     <script type="text/javascript" src="../js/lib/jquery.js"></script>
     <script type="text/javascript" src="../js/scroll.js"></script>
-    <script type="text/javascript" src="../js/lib/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="../ref/moban/fullPage/js/jquery.fullPage.js"></script>
+    <!-- <script type="text/javascript" src="../js/lib/jquery.fullPage.min.js"></script> -->
+    <script type="text/javascript" src="../js/lib/jquery.lazyload.min.js"></script>
     <title>地图页面</title>
 </head>
 
@@ -16,6 +18,34 @@
     <link rel="stylesheet" href="../css/map.css">
     <link rel="stylesheet" href="../css/mapScroll.css">
     <div class="m-map">
+        <!-- head -->
+        <div class="header">
+            <div class="left">
+            <!-- logo部分 -->
+                <div class="worldIcon">
+                    <a href="index.html">
+                        <image src="../image/world.png" alt="worldicon"></image>
+                    </a>
+                    <span class="logo">
+                    </span>
+                </div>
+            </div>
+            <div class="right">
+                <div class="rightContent">
+                    <div class="rightLink">
+                        <ul>
+                            <li>
+                                <a href="index.html">动态</a>
+                            </li>
+                            <li>
+                                <a href="html/scroll.html">关于</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 头部结束 -->
         <ul class="m-map-menu">
             <li>无疆之旅</li>
             <li>赤子之旅</li>
@@ -64,27 +94,16 @@
         </ul>
         <ul class="m-map-detail">
             <li>
-                <!-- head -->
-                <div class="header">
-                    <div class="left">
-                    <!-- logo部分 -->
-                        <div class="worldIcon">
-                            <a href="index.html">
-                                <image src="../image/world.png" alt="worldicon"></image>
-                            </a>
-                            <span class="logo">
-                            </span>
-                        </div>
-                    </div>
-                    <!-- control button -->
-                    <div class="button" id="clickButton">
-                        <img src="../image/icon/left.svg" style="display: none" width="30px" height="30px" id="previousButton">
-                        <img src="../image/icon/close.svg" style="display: none" width="30px" height="30px" id="closeButton">
-                        <img src="../image/icon/right.svg" style="display: none" width="30px" height="30px" id="nextButton">
-                    </div>
+                <!-- 控制按钮部分 -->
+                <div class="clickButton" id="clickButton">
+                    <img src="../image/icon/left.svg" style="display: none" width="30px" height="30px" id="previousButton" class="previousButton">
+                    <img src="../image/icon/close.svg" style="display: none" width="30px" height="30px" id="closeButton" class="closeButton">
+                    <img src="../image/icon/right.svg" style="display: none" width="30px" height="30px" id="nextButton" class="nextButton">
                 </div>
+                <div class="_close">X</div>
+                <div class="_openButton">>></div>
                 <!-- 图片部分 -->
-                <div id="picWrap">
+                <div class="picWrap">
                     <div class="blackBoard" id="blackBoard">
                         <div class="scrollText" id="scrollText">
                             <ul>
@@ -154,29 +173,192 @@
                     <div class="scrollPic">
                         <div class="picContent" id="picContent">
                             <div class="section">
-                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
-                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
-                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
-                                <div class="slide" data-src="../image/temp/jiazhou1.jpg"></div>
-                                <!-- <div class="slide" style="background-image: url(../image/jialebi/jialebi1.jpg);opacity: 0.9;"></div>
-                                <div class="slide" style="background-image: url(../image/jialebi/jialebi2.jpg);opacity: 0.9;"></div>
-                                <div class="slide" style="background-image: url(../image/jialebi/jialebi3.jpg);opacity: 0.9;"></div>
-                                <div class="slide" style="background-image: url(../image/jialebi/jialebi4.jpg);opacity: 0.9;"></div> -->
+                                <div class="slide" data-original="../image/jialebi/jialebi1.jpg" width="100%" height="100%"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi2.jpg" width="100%" height="100%"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi3.jpg" width="100%" height="100%"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi4.jpg" width="100%" height="100%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="_close">X</div>
             </li>
             <li>
-                <div class="_left">xxxxxxxxx222</div>
-                <div class="_right" data-src="img/temp/jiazhou1.jpg"></div>
+                <!-- 控制按钮部分 -->
+                <div class="clickButton" id="clickButton">
+                    <img src="../image/icon/left.svg" style="display: none" width="30px" height="30px" id="previousButton" class="previousButton">
+                    <img src="../image/icon/close.svg" style="display: none" width="30px" height="30px" id="closeButton" class="closeButton">
+                    <img src="../image/icon/right.svg" style="display: none" width="30px" height="30px" id="nextButton" class="nextButton">
+                </div>
                 <div class="_close">X</div>
+                <div class="_openButton">>></div>
+                <!-- 图片部分 -->
+                <div class="picWrap">
+                    <div class="blackBoard" id="blackBoard">
+                        <div class="scrollText" id="scrollText">
+                            <ul>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="scrollPic">
+                        <div class="picContent" id="picContent">
+                            <div class="section">
+                                <div class="slide" data-original="../image/jialebi/jialebi1.jpg"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi2.jpg"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi3.jpg"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi4.jpg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </li>
             <li>
-                <div class="_left">xxxxxxxxx333</div>
-                <div class="_right" data-src="img/temp/jiazhou1.jpg"></div>
+                <!-- 控制按钮部分 -->
+                <div class="clickButton" id="clickButton">
+                    <img src="../image/icon/left.svg" style="display: none" width="30px" height="30px" id="previousButton" class="previousButton">
+                    <img src="../image/icon/close.svg" style="display: none" width="30px" height="30px" id="closeButton" class="closeButton">
+                    <img src="../image/icon/right.svg" style="display: none" width="30px" height="30px" id="nextButton" class="nextButton">
+                </div>
                 <div class="_close">X</div>
+                <div class="_openButton">>></div>
+                <!-- 图片部分 -->
+                <div class="picWrap">
+                    <div class="blackBoard" id="blackBoard">
+                        <div class="scrollText" id="scrollText">
+                            <ul>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                                <li>
+                                    <h3>人文故事</h3>
+                                    <span class="smallText">Cultural & History</span>
+                                    <p>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。<br/>
+                                        据信在1492年克里斯多福·哥伦布登陆加勒比群岛的<br/>
+                                        一般相信加勒比人是从南美洲委内瑞拉,<br/>
+                                        的奥利诺科河流域雨林来到加勒比海地区定居的。</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="scrollPic">
+                        <div class="picContent" id="picContent">
+                            <div class="section">
+                                <div class="slide" data-original="../image/jialebi/jialebi1.jpg"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi2.jpg"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi3.jpg"></div>
+                                <div class="slide" data-original="../image/jialebi/jialebi4.jpg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </li>
             <li>
                 <div class="_left">xxxxxxxxx444</div>

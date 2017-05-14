@@ -9,37 +9,47 @@
     <script type="text/javascript" src="../js/lib/jquery.js"></script>
     <script type="text/javascript" src="../js/scroll.js"></script>
     <script type="text/javascript" src="../js/lib/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.lazyload.min.js"></script>
     <script type="text/javascript">
-    //禁用鼠标滚轮事件
-		function disabledMouseWheel() {
-		    if (document.addEventListener) {
-		        document.addEventListener('DOMMouseScroll', scrollFunc, false);
-		    } //W3C  
-		    window.onmousewheel = document.onmousewheel = scrollFunc; //IE/Opera/Chrome  
-		}
+    	//禁用鼠标滚轮事件
+		// function disabledMouseWheel() {
+		//     if (document.addEventListener) {
+		//         document.addEventListener('DOMMouseScroll', scrollFunc, false);
+		//     } //W3C  
+		//     window.onmousewheel = document.onmousewheel = scrollFunc; //IE/Opera/Chrome  
+		// }
 
-		function scrollFunc(evt) {
-		    evt = evt || window.event;
-		    if (evt.preventDefault) {
-		        // Firefox  
-		        evt.preventDefault();
-		        evt.stopPropagation();
-		    } else {
-		        // IE  
-		        evt.cancelBubble = true;
-		        evt.returnValue = false;
-		    }
-		    return false;
-		}
-		window.onload=disabledMouseWheel;
+		// function scrollFunc(evt) {
+		//     evt = evt || window.event;
+		//     if (evt.preventDefault) {
+		//         // Firefox  
+		//         evt.preventDefault();
+		//         evt.stopPropagation();
+		//     } else {
+		//         // IE  
+		//         evt.cancelBubble = true;
+		//         evt.returnValue = false;
+		//     }
+		//     return false;
+		// }
+		// window.onload=disabledMouseWheel;
 
 		$(function(){
 			$('#picContent').fullpage({
 				anchors: ['page1', 'page2', 'page3', 'page4'],
-				menu: '#scrollMenu'
+				menu: '#scrollMenu',
+				resize: true,
 			});
-
+			$.fn.fullpage.setAllowScrolling();
 			$('.fp-controlArrow').hide();
+
+			//lazyload
+			$("#picContent .section .slide").lazyload({
+				threshold : 0,
+				effect: "fadeIn",
+				event: 'mouseover',
+				placeholder : "../image/icon-loading.png"
+			});
 
 			//bind event
 			var $prev = $('#previousButton');
@@ -109,8 +119,7 @@
 		<div class="picContent" id="picContent">
 			<!-- pic -->
 			<div class="section">
-				<div class="slide" style="background-image: url(../image/jialebi/jialebi1.jpg);opacity: 0.9">
-					<!-- <img src="../image/jialebi/jialebi1.jpg"> -->
+				<div class="slide" data-original="../image/jialebi/jialebi1.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -132,7 +141,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/jialebi/jialebi2.jpg); opacity: 0.9">
+				<div class="slide" data-original="../image/jialebi/jialebi2.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -154,7 +163,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/jialebi/jialebi3.jpg)">
+				<div class="slide" data-original="../image/jialebi/jialebi3.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -176,7 +185,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/jialebi/jialebi4.jpg)">
+				<div class="slide" data-original="../image/jialebi/jialebi4.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -201,7 +210,7 @@
 			</div>
 
 			<div class="section">
-				<div class="slide" style="background-image: url(../image/boliji/boliji2.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/boliji/boliji2.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到波利尼积压</span>
 						<!-- 滚动主体部分 -->
@@ -224,7 +233,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/boliji/boliji2.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/boliji/boliji2.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到波利尼积压</span>
 						<!-- 滚动主体部分 -->
@@ -247,7 +256,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/boliji/boliji3.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/boliji/boliji3.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到波利尼积压</span>
 						<!-- 滚动主体部分 -->
@@ -270,7 +279,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/boliji/boliji4.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/boliji/boliji4.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到波利尼积压</span>
 						<!-- 滚动主体部分 -->
@@ -296,7 +305,7 @@
 			</div>
 
 			<div class="section">
-				<div class="slide" style="background-image: url(../image/jiazhou/jiazhou1.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/jiazhou/jiazhou1.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加利佛尼亚</span>
 						<!-- 滚动主体部分 -->
@@ -318,7 +327,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/jiazhou/jiazhou2.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/jiazhou/jiazhou2.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加利佛尼亚</span>
 						<!-- 滚动主体部分 -->
@@ -340,7 +349,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/jiazhou/jiazhou3.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/jiazhou/jiazhou3.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加利佛尼亚</span>
 						<!-- 滚动主体部分 -->
@@ -362,7 +371,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" style="background-image: url(../image/jiazhou/jiazhou4.jpg);opacity: 0.9">
+				<div class="slide" data-original="../image/jiazhou/jiazhou4.jpg" width="100%" height="100%">
 					<div class="spanText">
 						<span>欢迎来到加利佛尼亚</span>
 						<!-- 滚动主体部分 -->
