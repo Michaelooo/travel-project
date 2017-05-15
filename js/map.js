@@ -53,11 +53,12 @@ $(function() {
 		}
 	}
 
-	var $li = $('li._open .scrollPic >ul >li');
+	// var $li = $('li._open .scrollPic >ul >li');
 	var curIndex = 0,
-	lastIndex = $li.length - 1;
+	lastIndex;
 
 	var switchPic = function (index) {
+		var $li = $('li._open .scrollPic >ul >li');
 		$li.removeClass('_current').eq(index).addClass('_current');
 		var prevIndex = index === 0 ? lastIndex : index - 1,
 			nextIndex = index === lastIndex ? 0 : index + 1;

@@ -2,82 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>内容详情页</title>
+    <title>内容详情页Demo</title>
     <link type="text/css" href="../css/detail.css" rel="stylesheet"/>
     <link rel="SHORTCUT ICON" href="../image/websiteIcon.ico">
     <link rel="stylesheet" href="../css/jquery.fullPage.css">
     <script type="text/javascript" src="../js/lib/jquery.js"></script>
-    <script type="text/javascript" src="../js/scroll.js"></script>
     <script type="text/javascript" src="../js/lib/jquery.fullPage.min.js"></script>
     <script type="text/javascript" src="../js/lib/jquery.lazyload.min.js"></script>
-    <script type="text/javascript">
-    	//禁用鼠标滚轮事件
-		// function disabledMouseWheel() {
-		//     if (document.addEventListener) {
-		//         document.addEventListener('DOMMouseScroll', scrollFunc, false);
-		//     } //W3C  
-		//     window.onmousewheel = document.onmousewheel = scrollFunc; //IE/Opera/Chrome  
-		// }
-
-		// function scrollFunc(evt) {
-		//     evt = evt || window.event;
-		//     if (evt.preventDefault) {
-		//         // Firefox  
-		//         evt.preventDefault();
-		//         evt.stopPropagation();
-		//     } else {
-		//         // IE  
-		//         evt.cancelBubble = true;
-		//         evt.returnValue = false;
-		//     }
-		//     return false;
-		// }
-		// window.onload=disabledMouseWheel;
-
-		$(function(){
-			$('#picContent').fullpage({
-				anchors: ['page1', 'page2', 'page3', 'page4'],
-				menu: '#scrollMenu',
-				resize: true,
-			});
-			$.fn.fullpage.setAllowScrolling();
-			$('.fp-controlArrow').hide();
-
-			//lazyload
-			$("#picContent .section .slide").lazyload({
-				threshold : 0,
-				effect: "fadeIn",
-				event: 'mouseover',
-				placeholder : "../image/icon-loading.png"
-			});
-
-			//bind event
-			var $prev = $('#previousButton');
-			var $close = $('#closeButton');
-			var $next = $('#nextButton');
-
-			$prev.click(function(){
-				$.fn.fullpage.moveSlideLeft();
-			});
-			$next.click(function(){
-				$.fn.fullpage.moveSlideRight();
-			});
-			$close.click(function(){
-				window.location.href='../html/focus.html';
-			});
-			/**
-             * 执行方法，有两个参数
-             * speed，表示滚动速度，数字越大表示越慢，
-             * rowHeight，表示滚动行的高度
-             */
-            $(function() {
-                $(".scrollText").myScroll({
-                    speed: 60,
-                    rowHeight: 600
-                });
-            });
-		});
-    </script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
+    <script type="text/javascript" src="../js/worldScroll.js"></script>
+    <script type="text/javascript" src="../js/detail.js"></script>
 </head>
 <body>
 	<div>
@@ -86,10 +20,12 @@
 		    <div class="left">
 		    <!-- logo部分 -->
 		        <div class="worldIcon">
-		            <a href="index.html">
+		            <a href="map-detail.html.html">
 		                <image src="../image/world.png" alt="worldicon"></image>
 		            </a>
 		            <span class="logo">
+		                <!-- <img src="../image/logo.png" width="30px" height="50px"> -->
+		                AGW
 		            </span>
 		        </div>
 		    </div>
@@ -99,27 +35,12 @@
 		    	<img src="../image/icon/close.svg"  width="30px" height="30px" id="closeButton">
 		    	<img src="../image/icon/right.svg"  width="30px" height="30px" id="nextButton">
 		    </div>
-		    <!-- right link -->
-<!-- 		    <div class="right">
-		        <div class="rightContent">
-		            <div class="rightLink">
-		                <ul>
-		                    <li>
-		                        <a href="index.html">动态</a>
-		                    </li>
-		                    <li>
-		                        <a href="html/scroll.html">关于</a>
-		                    </li>
-		                </ul>
-		            </div>
-		        </div>
-		    </div> -->
 		</div>
 		<!-- main content -->
 		<div class="picContent" id="picContent">
 			<!-- pic -->
 			<div class="section">
-				<div class="slide" data-original="../image/jialebi/jialebi1.jpg" width="100%" height="100%">
+				<div class="slide" data-original="../image/jialebi/jialebi1.jpg" width="100%" height="100%" style="opacity: 0.8;">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -141,7 +62,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" data-original="../image/jialebi/jialebi2.jpg" width="100%" height="100%">
+				<div class="slide" data-original="../image/jialebi/jialebi2.jpg" width="100%" height="100%" style="opacity: 0.8;">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -163,7 +84,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" data-original="../image/jialebi/jialebi3.jpg" width="100%" height="100%">
+				<div class="slide" data-original="../image/jialebi/jialebi3.jpg" width="100%" height="100%" style="opacity: 0.8;">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -185,7 +106,7 @@
 				        </div>
 					</div>
 				</div>
-				<div class="slide" data-original="../image/jialebi/jialebi4.jpg" width="100%" height="100%">
+				<div class="slide" data-original="../image/jialebi/jialebi4.jpg" width="100%" height="100%" style="opacity: 0.8;">
 					<div class="spanText">
 						<span>欢迎来到加勒比</span>
 						<!-- 滚动主体部分 -->
@@ -399,9 +320,9 @@
 		<!-- footer -->
 		<div class="footer" id="footer">
 			<ul id="scrollMenu">
-				<li data-menuanchor="page1" class="active"><a href="#page1">加勒比</a></li>
-				<li data-menuanchor="page2"><a href="#page2" >波立吉尼亚</a></li>
-				<li data-menuanchor="page3"><a href="#page3" >加州</a></li>
+				<li data-menuanchor="page1" class="active"><a href="#page1">加勒比加勒比加勒比</a></li>
+				<li data-menuanchor="page2"><a href="#page2" >波立吉尼亚波立吉尼亚</a></li>
+				<li data-menuanchor="page3"><a href="#page3" >加州加州加州加州</a></li>
 			</ul>
 		</div>
 	</div>
