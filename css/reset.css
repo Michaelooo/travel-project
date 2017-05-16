@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: Helvetica Neue, Roboto, microsoft yahei, Arial;
 }
 ol, ul {
 	list-style: none;
