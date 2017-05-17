@@ -20,38 +20,38 @@ $(function() {
 	};
 
 	//点击图层进入的加载效果
-	var _style = function (index) {
-		var detailWrap = $details.eq(index);
-		var $blackBoard = detailWrap.find('._left');
-		var $title = detailWrap.find('._left h3');
-		var $smallText = detailWrap.find('._left .smallText');
-		var $pText = detailWrap.find('._left p');
-		setTimeout(function() {
-			$blackBoard.animate({
-				left: "0px"
-			}, 500);
-			$title.animate({
-				opacity: 1
-			}, 500);
-			$smallText.animate({
-				opacity: 1
-			}, 500);
-			$pText.animate({
-				opacity: 1
-			}, 500);
-		}, 500)
-	} 
-	//点击展开大图之后的效果
-	var _style2 = function (index,callback) {
+	var _style = function(index) {
+			var detailWrap = $details.eq(index);
+			var $blackBoard = detailWrap.find('._left');
+			var $title = detailWrap.find('._left h3');
+			var $smallText = detailWrap.find('._left .smallText');
+			var $pText = detailWrap.find('._left p');
+			setTimeout(function() {
+				$blackBoard.animate({
+					left: "0px"
+				}, 500);
+				$title.animate({
+					opacity: 1
+				}, 500);
+				$smallText.animate({
+					opacity: 1
+				}, 500);
+				$pText.animate({
+					opacity: 1
+				}, 500);
+			}, 500)
+		}
+		//点击展开大图之后的效果
+	var _style2 = function(index, callback) {
 		var detailWrap = $details.eq(index);
 		var $blackBoard = detailWrap.find('._left');
 		$blackBoard.animate({
 			left: "-750px"
-		}, 500,callback);
+		}, 500, callback);
 	}
 
 	// 点击关闭大图页之后的效果
-	var _style3 = function(){
+	var _style3 = function() {
 		var detailWrap = $('.m-map-detail > li._open');
 		var $blackBoard = detailWrap.find('._left');
 		$blackBoard.animate({
@@ -121,7 +121,7 @@ $(function() {
 		//事件1
 		$('.m-map-detail').on('click', '._open >._btn', function() {
 			var index = $(this).parent('li').index();
-			_style2(index,function(){
+			_style2(index, function() {
 				var html = '';
 				$(this).siblings('._right').children().each(function() {
 					html += '<li data-src="' + $(this).data('src') + '"></li>';
@@ -155,7 +155,7 @@ $(function() {
 				$(event.delegateTarget).removeClass('_off');
 			}, 500);
 			var index = $(this).parent().parent().find('ul >li');
-			setTimeout(_style3,1000);
+			setTimeout(_style3, 1000);
 			// _style3();
 		});
 	})();
