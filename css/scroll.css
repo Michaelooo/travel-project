@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-size: 12px;
+    color: #acacac;
 }
 
 body {
@@ -117,7 +118,8 @@ li {
 
 .bigBox{
     max-width: 760px;
-    min-height: 600px;
+    /*min-height: 600px;*/
+    height: 100%;
     margin: 2em auto 2em auto;
     position: relative;
     overflow: hidden;
@@ -134,8 +136,8 @@ li {
 }
 
 
-.scrollText {
-    width: 95%;
+.scrollWrapper {
+    width: 700px;
     height: 600px;
     margin: 0 auto;
     /*background-image: url("../image/blackboard.png");*/
@@ -145,8 +147,43 @@ li {
     overflow: hidden;
 }
 
-.scrollText ul{
-    /*margin: 40px 40px;*/
+#scrollText {
+    position: relative;
+    width: 103%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+#scrollText h3 {
+    font-size: 14px;
+    text-align: center;
+    /*text-shadow: 1px 1px 1px #acacac;*/
+}
+
+#scrollText h4 {
+    font-size: 13px;
+    /*text-align: center;*/
+    /*text-shadow: 1px 1px 1px #acacac;*/
+}
+
+#scrollText p {
+    word-wrap:break-word;
+    text-indent:25px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+p.flow {
+    word-wrap:break-word;
+    text-indent:25px;
+    line-height: 12px;
+    font-size: 12px;
+}
+
+
+
+/* .scrollText ul{
+    margin: 40px 40px;
 }
 .scrollText li {
     margin: 50px;
@@ -160,18 +197,18 @@ li {
     color: #acacac;
     font: normal 12px/24px Arial;
     font-size: 16px;
-    /*height: 20px;*/
+    height: 20px;
     line-height: 20px;
 }
 
 .scrollText li p a {
     float: left;
-}
+} */
 
 /*右边联系方式部分*/
 #right {
     position: fixed;
-    right: -180px;
+    right: -200px;
     width: 250px;
     bottom: 200px;
 }
@@ -182,9 +219,10 @@ li {
 }
 #right .pic {
     float: left;
-    display: relative;
-    width: 50px;
-    height: 50px;
+    position: : relative;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 #right .pic img {
@@ -196,26 +234,24 @@ li {
 
 #right .liner {
     float: left;
-    width: 50px;
-    height: 50px;
-    margin: 1px;
+    width: 40px;
+    height: 60px;
+    margin-left: 2px;
 }
 
 #right .contactInfo {
     position: relative;
     float: left;
-    width: 100px;
+    width: 140px;
     height: 70px;
-    color: white;
-    font-size: 14px;
 }
 
 #right .contactInfo .text {
     position: absolute;
+    font-size: 12px;
     bottom: 0;
+    font-weight: bold;
 }
 
-#right .qrcode {
 
-}
 
