@@ -25,7 +25,7 @@ $(function() {
 	$('#picContent').fullpage({
 		anchors: ['page1', 'page2', 'page3', 'page4'],
 		menu: '#scrollMenu',
-		resize: true,
+		resize: true
 	});
 	$.fn.fullpage.setAllowScrolling();
 	$('.fp-controlArrow').hide();
@@ -75,10 +75,39 @@ $(function() {
 	 * speed，表示滚动速度，数字越大表示越慢，
 	 * rowHeight，表示滚动行的高度
 	 */
-	$(function() {
-		$(".scrollText").myScroll({
-			speed: 60,
-			rowHeight: 600
-		});
-	});
+	// $(function() {
+	// 	$(".scrollText").myScroll({
+	// 		speed: 60,
+	// 		rowHeight: 600
+	// 	});
+	// });
+
+	//文字特效
+	var $spanTitle = $('.spanText >span');
+	var $textWrapper = $('.textWrapper');
+	$textWrapper.hover(function(){
+		$spanTitle.animate({'opacity': 0},500);
+		$textWrapper.animate({
+			'top': 0,
+			'height': 600
+		},1000);
+	},function(){
+		$spanTitle.animate({'opacity': 1},500);
+		$textWrapper.animate({
+			'top': 60,
+			'height': 150
+		},1000);
+	})
+
+	//点击li切换，加一个全局的loading
+	function _style_li () {
+		var $li = $('#footer >ul >li a');
+		$li.click(function(){
+			$('.loading').show();
+			setTimeout(function(){
+				$('.loading').hide();
+			},700);
+		})
+	}
+	_style_li();
 });

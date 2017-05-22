@@ -127,49 +127,48 @@ li {list-style: none;}
     z-index: 1000;
 }
 
+.blackBoard {
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10% 0 100px 15%;
+    opacity:1;
+    overflow: hidden;
+}
+
 .scrollText {
     display: block;
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 103%;
+    height: 85%;
     margin: 0 auto;
     opacity: 1;
     background-size: 100% 100%;
     background-repeat: repeat;
-    overflow: auto;
+    overflow-y: scroll;
 }
 ::-webkit-scrollbar {
     display: none;
 }
 
-.scrollText ul{
-    margin: 120px 80px;
+.scrollText span{
     display: block;
-    width: 500px;
-    height: 800px;
-    position: relative;
-}
-.scrollText li {
-    list-style: none;
-}
-
-.scrollText li span{
-    font-size:20px;
+    margin-bottom: 10px;
+    font-size: 16px;
     color: gray;
     opacity: 0.5;
+    margin-bottom: 5px;
 }
 
-.scrollText li h3{
+.scrollText h3{
     color: #ffffff;
     font: normal 12px/24px Arial;
     font-size: 24px;
+    margin-bottom: 5px;
     opacity: 0.5;
 }
-.scrollText li.lieven {
-    background: #F0F2F3;
-}
 
-.scrollText li p {
+.scrollText p {
     color: #ffffff;
     font: normal 12px/24px Arial;
     font-size: 18px;
@@ -178,18 +177,6 @@ li {list-style: none;}
     opacity: 0.5;
 }
 
-.scrollText li p a {
+.scrollText p a {
     float: left;
-}
-.scrollPic {
-    width: 400%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.scrollPic .slide {
-    width: 100%;
-    height: 100%;
 }

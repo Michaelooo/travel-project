@@ -93,6 +93,7 @@ $(function() {
 	});
 	$('.m-map-detail').on('click', 'li >._close', function() { //关闭
 		var index = $(this).parent('li').index();
+		_style2(index);
 		$details.eq(index).removeClass('_open');
 	});
 

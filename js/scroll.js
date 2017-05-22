@@ -1,4 +1,4 @@
-// 扩展方法，用于文字滚动
+// 扩展方法，用于文字滚动,暂时弃用
 (function($) {
     $.fn.myScroll = function(options) {
         var defaults = {

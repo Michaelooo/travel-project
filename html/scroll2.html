@@ -19,6 +19,22 @@
         //     function() {
         //         /* stuff to do after animation is complete */
         //     });
+        
+        var timer = setInterval(function(){
+            var _obj = $('#scrollText');
+            var _scrolltop = _obj.scrollTop()+1;
+            obj.scrollTop(_scrolltop);
+        },100);
+        obj.hover(function(){
+            clearInterval(timer);
+        },function(){
+            timer = setInterval(function(){
+                var _obj = $('#scrollText');
+                var _scrolltop = _obj.scrollTop()+1;
+                obj.scrollTop(_scrolltop);
+            },100);
+        })
+
         /*
         浮动效果实现
          */

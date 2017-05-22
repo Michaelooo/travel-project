@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color:#111111; 
+    background-color:#111111;
     /*background: rgba(0, 0, 0, 0.85);*/
     overflow: hidden;
 }
@@ -136,10 +136,14 @@ body {
 .spanText {
     color: white;
     font-size: 18px;
-    width: 800px;
+    width: 600px;
     height: 600px;
     float: right;
     opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    z-index: 1000;
 }
 
 .spanText span {
@@ -147,45 +151,30 @@ body {
     font-size: 50px;
     float: right;
     margin-right: 80px;
-    margin-bottom: 95px;
+    margin-bottom: 60px;
 }
 
-.scrollText {
+.textWrapper {
+    position: relative;
+    top: 60px;
     width: 80%;
-    height: 400px;
+    height: 150px;
     float: right;
     margin-right: 90px;
-    /* background-image: url(../image/blackboard.png); */
     opacity: 1;
-    background-size: 100% 100%;
-    background-repeat: repeat;
     overflow: hidden;
 }
 
-.scrollText ul{
-    /*margin: 40px 40px;*/
-}
-.scrollText li {
-    margin: 20px 0 20px 250px;
-    list-style: none;
-}
-
-.scrollText li.lieven {
-    background: #F0F2F3;
-}
-
-.scrollText li p {
+.textWrapper p {
     color: #ffffff;
     font: normal 12px/24px Arial;
     font-size: 18px;
     /*height: 20px;*/
     line-height: 22px;
+    margin-bottom: 20px;
     text-shadow: 1px 1px 1px #white;
 }
 
-.scrollText li p a {
-    float: left;
-}
 
 .slide {
     width: 100%;
@@ -219,7 +208,7 @@ body {
     line-height: 50px;
     width: 270px;
     height: 50px;
-    border-left: 1px solid #ffffff;
+    border-left: 3px solid #ffffff;
     margin-right: 5px;
 }
 
@@ -231,12 +220,12 @@ body {
     line-height: 50px;
     width: 270px;
     height: 50px;
-    border-left: 1px solid #ffffff;
+    border-left: 3px solid #ffffff;
     margin-right: 5px;
 }
 
 #footer ul li:last-child {
-    border-right: 1px solid #ffffff;
+    border-right: 3px solid #ffffff;
     margin-right: 0px;
 }
 
@@ -248,3 +237,42 @@ body {
     color: #ffffff;
 }
 
+
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: #111111;
+    /* background: url(../image/icon-loading.png) center no-repeat; */
+    z-index: 10000;
+}
+
+.showLoading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    background: url(../image/icon-loading.png) center no-repeat;
+    -webkit-animation: focus-loading 1s infinite linear;
+                    animation: focus-loading 1s infinite linear; }
+}
+
+@-webkit-keyframes focus-loading {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
+
+@keyframes focus-loading {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
