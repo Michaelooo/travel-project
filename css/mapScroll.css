@@ -197,3 +197,19 @@ span.author {
     text-align: right;
     opacity: 0.9;
 }
+
+@-webkit-keyframes focus-loading {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
+
+@keyframes focus-loading {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }

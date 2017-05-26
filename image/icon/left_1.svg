@@ -1,14 +1,17 @@
 <svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" class="icon">
  <defs>
   <style type="text/css"/>
+  <filter id="svg_4_blur">
+   <feGaussianBlur stdDeviation="0.1"/>
+  </filter>
  </defs>
  <g>
   <title>background</title>
-  <rect fill="#ffffff" id="canvas_background" height="1026" width="1026" y="-1" x="-1"/>
+  <rect x="-1" y="-1" width="1026" height="1026" id="canvas_background" fill="none"/>
  </g>
  <g>
   <title>Layer 1</title>
-  <path id="svg_1" fill="#ffffff" d="m751.81875,111.6375l-48.53248,-48.5335l-448.29593,448.38707l448.29593,448.33895l48.53248,-48.53351l-399.8423,-399.83616l399.8423,-399.82285zm0,0"/>
-  <rect stroke="#fcfcf9" transform="rotate(-46.47314453125 690.5,503.5) " id="svg_2" height="386.280373" width="387.384336" y="310.359804" x="496.807837" stroke-width="1.5" fill="#f7fcfc"/>
+  <path d="m751.81875,111.6375l-48.53248,-48.5335l-448.29593,448.38707l448.29593,448.33895l48.53248,-48.53351l-399.8423,-399.83616l399.8423,-399.82285zm0,0" fill="#ffffff" id="svg_1"/>
+  <rect fill="#ffffff" stroke-width="null" stroke-opacity="null" fill-opacity="null" x="523.949768" y="316.225392" width="367.567743" height="377.044142" id="svg_4" transform="rotate(45.1180534362793 707.7336425781251,504.74743652343744) " stroke="null" filter="url(#svg_4_blur)"/>
  </g>
 </svg>

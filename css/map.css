@@ -147,9 +147,9 @@
       font-size: 18px;
       cursor: pointer;
       transition: all .5s;
-      background: rgba(0, 0, 0, 0.1); }
+      background: rgba(0, 0, 0, 0); }
       .m-map-detail > li > ._close:hover {
-        background: rgba(0, 0, 0, 0.2); }
+        background: rgba(0, 0, 0, 0); }
     .m-map-detail > li > ._btn {
       position: absolute;
       bottom: 50px;
@@ -217,15 +217,13 @@
       .m-map-fullPage > ul > li._loaded::after {
         display: none; }
   .m-map-fullPage > ._btn {
+    display: inline-block;
     position: absolute;
     top: 30px;
     left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    transition: all .5s;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 26px;
-    padding: 0 15px; }
+    text-align: center;}
+    .m-map-fullPage > ._btn > img {
+      margin-right: 10px;}
     .m-map-fullPage > ._btn > i {
       display: inline-block;
       width: 50px;

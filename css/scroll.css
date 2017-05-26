@@ -190,40 +190,6 @@ p.flow {
 }
 
 
-
-/* 
-.scrollText {
-    width: 700px;
-    height: 600px;
-    margin: 0 auto;
-    opacity:1;
-    background-size: 100% 100%;
-    background-repeat: repeat;
-    overflow: hidden;
-}
-.scrollText ul{
-    margin: 40px 40px;
-}
-.scrollText li {
-    margin: 50px;
-}
-
-.scrollText li.lieven {
-    background: #F0F2F3;
-}
-
-.scrollText li p {
-    color: #acacac;
-    font: normal 12px/24px Arial;
-    font-size: 16px;
-    height: 20px;
-    line-height: 20px;
-}
-
-.scrollText li p a {
-    float: left;
-} */
-
 /*右边联系方式部分*/
 #right {
     position: fixed;
@@ -272,5 +238,19 @@ p.flow {
     font-weight: bold;
 }
 
+@-webkit-keyframes focus-loading {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
 
+@keyframes focus-loading {
+  0% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); } }
 

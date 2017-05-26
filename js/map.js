@@ -139,28 +139,37 @@ $(function() {
 			$('.m-map-fullPage >ul >li').width($(this).width());
 		});
 		//事件2
-		$('.m-map-fullPage').on('click', '>._btn i:eq(0)', function() {
+		$('.m-map-fullPage').on('click', '>._btn img:eq(0)', function() {
 			var prevIndex = curIndex === 0 ? lastIndex : curIndex - 1;
 			switchover_pic(prevIndex);
 			curIndex = prevIndex;
 		});
-		$('.m-map-fullPage').on('click', '>._btn i:eq(2)', function() {
+		$('.m-map-fullPage').on('click', '>._btn img:eq(2)', function() {
 			var nextIndex = curIndex === lastIndex ? 0 : curIndex + 1;
 			switchover_pic(nextIndex);
 			curIndex = nextIndex;
 		});
-		$('.m-map-fullPage').on('click', '>._btn i:eq(1)', function(event) {
+		$('.m-map-fullPage').on('click', '>._btn img:eq(1)', function(event) {
 			$(event.delegateTarget).removeClass('_on');
 			$(event.delegateTarget).addClass('_off');
 			setTimeout(function() {
 				$(event.delegateTarget).removeClass('_off');
 			}, 500);
 			var index = $(this).parent().parent().find('ul >li');
-			setTimeout(_style3, 1000);
+			setTimeout(_style3, 500);
 			// _style3();
 		});
 	})();
 
+	//修改地图页面关闭图标样式
+	var _closeHtml = '<img src="../image/icon/_line.svg" width="50px" height="50px" class="closeButton">';
+	$('._close').append(_closeHtml);
+	$('._close').mouseenter(function(){
+		$(this).find('.closeButton').attr('src','../image/icon/_line_close.svg')
+	});
+	$('._close').mouseleave(function(){
+		$(this).find('.closeButton').attr('src','../image/icon/_line.svg')
+	});
 	//初始化
 	switchover(0);
 });
