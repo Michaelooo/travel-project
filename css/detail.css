@@ -44,7 +44,16 @@ body {
     top: -30px;
     width: 100px;
     height: 100px;
-    opacity: 0.1;
+    opacity: 0.2;
+    z-index: 10;
+    -webkit-animation: focus-loading 4s infinite linear;
+    animation: focus-loading 4s infinite linear;
+}
+
+.header .left .worldIcon img:hover {
+    position: absolute;
+    left: -30px;
+    top: -30px;
     z-index: 10;
 }
 
@@ -278,8 +287,8 @@ body {
     width: 48px;
     height: 48px;
     background: url(../image/icon-loading.png) center no-repeat;
-    -webkit-animation: focus-loading 1s infinite linear;
-                    animation: focus-loading 1s infinite linear; }
+    -webkit-animation: focus-loading 2s infinite linear;
+    animation: focus-loading 2s infinite linear;}
 }
 
 @-webkit-keyframes focus-loading {
