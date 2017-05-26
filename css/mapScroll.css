@@ -151,13 +151,12 @@ li {list-style: none;}
     display: none;
 }
 
-.scrollText span{
+.scrollText span.smallText{
     display: block;
-    margin-bottom: 10px;
     font-size: 16px;
     color: gray;
     opacity: 0.5;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .scrollText h3{
@@ -172,11 +171,20 @@ li {list-style: none;}
     color: #ffffff;
     font: normal 12px/24px Arial;
     font-size: 18px;
-    height: 200px;
+    margin-bottom: 30px;
     line-height: 24px;
     opacity: 0.5;
 }
 
 .scrollText p a {
     float: left;
+}
+
+span.author {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    width: 50%;
+    text-align: right;
+    opacity: 0.9;
 }
