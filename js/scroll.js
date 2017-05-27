@@ -50,10 +50,40 @@
     }
 })(jQuery);
 
+$(function() {
+    var obj = $('#scrollText');
+    // obj.animate({
+    //         'top':-500
+    //     },
+    //     20000,
+    //     function() {
+    //         /* stuff to do after animation is complete */
+    //     });
+    var timer = setInterval(function(){
+        var _obj = $('#scrollText');
+        var _scrolltop = _obj.scrollTop()+1;
+        obj.scrollTop(_scrolltop);
+    },100);
+    obj.hover(function(){
+        clearInterval(timer);
+    },function(){
+        timer = setInterval(function(){
+            var _obj = $('#scrollText');
+            var _scrolltop = _obj.scrollTop()+1;
+            obj.scrollTop(_scrolltop);
+        },100);
+    })
 
-/**
- * 为不同行添加不同的样式，这个暂时先不用
- */
-// $(document).ready(function(){
-// 	$('.list_lh li:even').addClass('lieven');
-// })
+    /*
+    浮动效果实现
+     */
+    $("#right").hover(function() {
+        $(this).animate({
+            right: "0px"
+        }, 200);
+    }, function() {
+        $(this).animate({
+            right: "-200px"
+        }, 200);
+    });
+});
