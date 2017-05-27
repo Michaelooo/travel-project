@@ -1,177 +1,219 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <title>关于页面Demo</title>
-    <link type="text/css" href="../css/scroll.css" rel="stylesheet"/>
+    <link type="text/css" href="../css/scroll.css" rel="stylesheet" />
     <link rel="SHORTCUT ICON" href="../image/websiteIcon.ico">
     <script type="text/javascript" src="../js/lib/jquery.js"></script>
     <script type="text/javascript" src="../js/scroll.js"></script>
     <script type="text/javascript" src="../js/worldScroll.js"></script>
     <script type="text/javascript">
-        $(function(){
-             /**
-             * 执行方法，有两个参数
-             * speed，表示滚动速度，数字越大表示越慢，
-             * rowHeight，表示滚动行的高度
-             */
-            $(function() {
-                $("#scrollText").myScroll({
-                    speed: 40,
-                    rowHeight: 600
-                });
-            });
-            /*
-            浮动效果实现
-             */
-            $(function(){
-                $("#right").hover(function(){
-                    $(this).animate({right: "0px"}, 200);
-                }, function(){
-                    $(this).animate({right: "-180px"}, 200);
-                });
-            });
+    $(function() {
+        var obj = $('#scrollText');
+        // obj.animate({
+        //         'top':-500
+        //     },
+        //     20000,
+        //     function() {
+        //         /* stuff to do after animation is complete */
+        //     });
+        
+        var timer = setInterval(function(){
+            var _obj = $('#scrollText');
+            var _scrolltop = _obj.scrollTop()+1;
+            obj.scrollTop(_scrolltop);
+        },100);
+        obj.hover(function(){
+            clearInterval(timer);
+        },function(){
+            timer = setInterval(function(){
+                var _obj = $('#scrollText');
+                var _scrolltop = _obj.scrollTop()+1;
+                obj.scrollTop(_scrolltop);
+            },100);
+        })
+
+        /*
+        浮动效果实现
+         */
+        $("#right").hover(function() {
+            $(this).animate({
+                right: "0px"
+            }, 200);
+        }, function() {
+            $(this).animate({
+                right: "-200px"
+            }, 200);
         });
+    });
     </script>
 </head>
+
 <body>
-<!-- 头部 -->
-<div class="header">
-    <div class="left">
-        <div class="worldIcon">
-            <a href="map.html">
-                <image src="../image/world.png" alt="worldicon"></image>
-            </a>
-            <span class="logo">
+    <!-- 头部 -->
+    <div class="header">
+        <div class="left">
+            <div class="worldIcon">
+                <a href="map.html">
+                    <image src="../image/world.png" alt="worldicon"></image>
+                </a>
+                <span class="logo">
                 <!-- <img src="../image/logo.png" width="30px" height="50px"> -->
                 AGW
-            </span>
-        </div>
-    </div>
-    <div class="right">
-        <div class="rightContent">
-            <div class="rightLink">
-                <ul>
-                    <li>
-                        <a href="detail.html">动态</a>
-                    </li>
-                    <li>
-                        <a href="scroll.html">关于</a>
-                    </li>
-                </ul>
+                </span>
             </div>
         </div>
-    </div>
-</div>
-<!-- 内容区 -->
-<div class="content">
-    <!-- 滚动最外边的大盒子 -->
-    <div class="bigBox">
-        <div class="profileIcon">
-            掠影天光工作室
-        </div>
-        <!-- 第一种方案 -->
-        <div class="scrollText" id="scrollText">
-                <ul>
-                    <li>
-                        <p>
-                            今天是“三八”国际劳动妇女节，3月8日上午，习近平在四川代表团参加审议时，代表党中央、国务院，向参加全国“两会”的女代表、女委员、女工作人员，向全国各族各界妇女同胞，致以节日的祝贺和诚挚的祝福</p>
-                    </li>
-                    <li>
-                        <p>
-                            1上午，习近平总书记在四川代表团参加审议时强调，要坚定不移打赢脱贫攻坚战。他说，看到凉山州“悬崖村”的村民和孩子们常年在悬崖上爬藤条，上山下乡，安全得不到保证，看了以后心情还是很沉重，也很揪心。前不久又看到材料，说当地已经建了新的铁梯，这样，心里又感觉到松了一下。对四川的脱贫攻坚，中央应该加大支持力度，这主要看哪里的贫困程度更深、更重。习近平强调，当然，工作还是要靠当地，主体责任还要当地党委和政府来担。</p>
-                    </li>
-                    <li>
-                        <p>
-                            2上午，习近平来到四川代表团参加审议。来自雅安市汉源县永利乡古路村的全国人大代表骆云莲在发言时介绍说，当地政府投资建设的高空索道已经建成，等待验收投用。总书记十分关心古路村是否通路，仔细询问相关情况。</p>
-                    </li>
-                    <li>
-                        <p>
-                            古路村位于雅安市、乐山市、凉山彝族自治州交界处，平均海拔2000多米，一条长750多米的索道横跨该村斑鸠嘴与马坪村二道坪，800米的高空下是奔腾的大渡河。古路村的村民们要下山，得先经过开凿在绝壁上的骡马路，再过索道，然后才能坐上汽车。</p>
-                    </li>
-                    <li>
-                        <p>
-                            3上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                    <li>
-                        <p>
-                            4上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                    <li>
-                        <p>
-                            5月8日上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                    <li>
-                        <p>
-                            6月8日上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                    <li>
-                        <p>
-                            7月8日上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                    <li>
-                        <p>
-                            8月8日上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                    <li>
-                        <p>
-                            9月8日上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                    <li>
-                        <p>
-                            10月8日上午，习近平总书记在四川代表团参加审议时指出，到2020年现行标准下农村贫困人口全部脱贫、贫困县全部摘帽，是我们党立下的军令状。要选派好驻村干部，保持基层扶贫干部相对稳定，保持工作连续性和有效性。现在所有扶贫地区的领导干部都要坚守岗位，要保证人员的稳定。（央视记者：胡玮
-                            爱民 史伟 汉明 晓鹏 邢彬 德文 汉章 鹏飞 亚阳 晓东）</p>
-                    </li>
-                </ul>
-        </div>
-    </div>
-</div>
-<!-- 右边的联系方式 -->
-<div id="right">
-    <div class="contactWrapper">
-        <div class="item">
-            <div class="pic">
-                <img src="../image/icon/mail.png" width="30px" height="30px">
-            </div>
-            <div class="liner">
-                <img src="../image/icon/linear.png">
-            </div>
-            <div class="contactInfo">
-                <span class="text">info@agwstudio.com</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="pic">
-                <img src="../image/icon/phone.png" width="30px" height="30px">
-            </div>
-            <div class="liner">
-                <img src="../image/icon/linear.png">
-            </div>
-            <div class="contactInfo">
-                <span class="text">+86 (0755) 8696 0004</span>
-            </div>
-        </div>
-        <div class="item">
-            <div class="pic">
-                <img src="../image/icon/wechat.png" width="30px" height="30px">
-            </div>
-            <div class="liner">
-                <img src="../image/icon/linear.png">
-            </div>
-            <div class="contactInfo">
-                <div class="qrcode">
-                    <img src="../image/icon/qrcode.png">
+        <div class="right">
+            <div class="rightContent">
+                <div class="rightLink">
+                    <ul>
+                        <li>
+                            <a href="detail.html">动态</a>
+                        </li>
+                        <li>
+                            <a href="scroll.html">关于</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!-- 内容区 -->
+    <div class="content">
+        <!-- 滚动最外边的大盒子 -->
+        <div class="bigBox">
+            <div class="scrollWrapper">
+                <div class="scrollText" id="scrollText">
+                    <div class="profileIcon">
+                        掠影天光工作室
+                    </div>
+                    <h3>公司介绍和发展史</h3><br/><br/>
+                    <p class="text">
+                        掠影天光旅行工作室，隶属于掠影天光（深圳）旅游有限公司，前身为美国R&Z工作室。掠影天光是一间以高品质订制旅游为核心业务的现代创新型工作室。创始团队来自美国华盛顿大学、爱达荷大学等多所世界名校，拥有深厚的文化底蕴和丰富的旅行行业经验，凭借环球执行资源、创新行程策划、贴心私属服务、精英人群圈层四大优势，加之与安曼、希尔顿、喜达屋、四季等国际知名品牌的合作，成为私人泛旅游订制的品牌标杆。
+                    </p><br/>
+                    <h4>OR</h4><br/>
+                    <p class="text">
+                        掠影天光是一个专门提供境外泛旅游服务与执行的独立工作室，主要针对为单一性客户提供一对一咨询与定制的旅行安排与目的地执行。在多语种优势、庞大的信息库及灵活的全球执行力下，通过N对1的私人订制模式，垂直策划并满足客户的境外需求。核心成员们富有多年海外生活经验与极强的旅游行业素质，足记遍布全球。正因为此，我们能够连接上全球各地的旅行家与爱好者们，将境内外独立旅游资源做系统性的规模整合，打造中国人自己的《Lonely Planet》。
+                    </p>
+                    <br/>
+                    <br/>
+                    <h3>我们的优势</h3><br/><br/>
+                    <p class="text" style="text-indent: 0;">
+                        ①行程策划：我们的行程是以您为主导而进行的旅游活动流程设计，我们将在满足您的个性化需求的前提下，主动为您提供充满创造力、充分特色化的定制服务。路线确定后，我们将会有专人进行实地考察以确保路线可行。
+                        <br/><br/> ②旅行顾问：我们的旅行顾问有全球高端旅游方面具有卓越经验，将为您提供行前、行中和归后的全球旅游信息咨询、方案策划和预定服务，提供“一对一”的个性化专属定制，24小时为您提供细致热情、周到体贴的专业服务。
+                        <br/><br/> ③路书制作：我们有专业的设计师与旅行顾问将根据您的行程为您制作一本专属于您的路书，内容涵盖出行途中的各种细节，包括景点路线、当地美食以及旅行tips。
+                        <br/><br/> ④落地执行：我们有多个国家地区健全的地接系统，涵盖交通、住宿、餐饮以及景点景区等资源渠道。我们以全新的旅游理念，创意的畅游体验、对当地市场特色的全面了解以及专人当地服务，将为您提供最为舒适的出行体验。
+                        <br/><br/> ⑤用户体验：掠影天光的旅行不是跟团挤大巴，不是十天去几个国家，更不是没完没了的购物。我们以探索、体验和极致舒适为基调，不忘初心，专注深度，只为您提供一次独一无二的完美旅行体验。
+                    </p>
+                    <br/>
+                    <br/>
+                    <h3>定制流程</h3><br/><br/>
+                    <h4>客户</h4><br/>
+                    <p class="flow">
+                        当你想要有一次私人专属定制游。
+                    </p><br/><br/>
+                    <h4>接触</h4><br/>
+                    <p class="flow">
+                        了解掠影天光工作室。
+                    </p><br/>
+                    <h4>指派旅行定制顾问</h4><br/>
+                    <p class="flow">
+                        旅行定制顾问将会根据您的时间安排，与您就出行需求（接待规格、出行时间、同行人员及人数、旅行偏好、目的地国家等）进行沟通与了解，方便对您进行独一无二的旅行定制。
+                    </p><br/>
+                    <h4>初步行程与报价</h4><br/>
+                    <p class="flow">
+                        了解到您的初步出行需求后，我们将会在两个工作日内做出此次行程初步策划，并配合您的时间进行后续沟通。
+                    </p><br/>
+                    <h4>签订合同定金</h4><br/>
+                    <p class="flow">
+                        如果您对于初步方案表示满意，则需要您支付1000元的定金，并签订定金合同。
+                    </p><br/>
+                    <h4>定制出行方案</h4><br/>
+                    <p class="flow">
+                        为您配备专业的旅行定制师，并由他为您定制一对一的独家具体出行方案。
+                    </p><br/>
+                    <h4>确定出行方案</h4><br/>
+                    <p class="flow">
+                        在这份方案中我们将会详细的规划您的出行，您可以在收到方案的2个工作日内进行反馈，旅行定制师将会根据您的需求进行修改，最终达到您的要求。
+                    </p><br/>
+                    <h4>签订正式合同</h4><br/>
+                    <p class="flow">
+                        在确定具体的出行方案之后，我们将会与您签订正式的合同，同时您需要补足行程全款，并交纳10%-25%的服务费。
+                    </p><br/>
+                    <h4>制定预订清单</h4><br/>
+                    <p class="flow">
+                        签订正式合同并收到您的定制全款的两个工作日内，我们将会就行程中需要预订的项目制定一份预订清单，并交由您查看与确认。
+                    </p><br/>
+                    <h4>确定预订清单</h4><br/>
+                    <p class="flow">
+                        请您在收到预定清单的一个工作日内进行确定，在您确定预定项目之后，我们将着手为您进行项目预订，如果您临时需要变更预订项目，则需支付200元/项的更改费用，我们也将尽快帮您修改预定项目。
+                    </p><br/>
+                    <h4>落实预订</h4><br/>
+                    <p class="flow">
+                        在您确定预定清单，预订项目之后，我们会尽快落实预订结果，并及时通知您。
+                    </p><br/>
+                    <h4>制定路书</h4><br/>
+                    <p class="flow">
+                        旅行定制师将会为您定制专属您的出行路书，为您的出行做出明确指南。路书将在您出行前至少一个星期交付给您，如果您对于路书的封面排版有特殊要求也请您与我们及时沟通。
+                    </p><br/>
+                    <h4>与您同行</h4><br/>
+                    <p class="flow">
+                        根据您的出行情况与人员配置，我们将会酌情配备境外执行人员与您同行，帮您解决行程中遇到的问题和困难，同时如果您在出行过程中想要对行程进行修改，执行人员也将及时向旅行定制师反应，对行程做出及时修改。
+                    </p><br/>
+                    <h4>后续反馈</h4><br/>
+                    <p class="flow">
+                        在您返程回国后，如果您愿意，我们将会收集您在行程中的影像资料，进行设计排版装订成册，定制您的独家记忆。
+                    </p><br/>
+                    <h4>合作方</h4><br/>
+                    <p class="flow">
+                        xxxxxxx
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 右边的联系方式 -->
+    <div id="right">
+        <div class="contactWrapper">
+            <div class="item">
+                <div class="pic">
+                    <img src="../image/icon/mail.png" width="30px" height="30px">
+                </div>
+                <div class="liner">
+                    <img src="../image/icon/linear.png">
+                </div>
+                <div class="contactInfo">
+                    <span class="text">info@agwstudio.com</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="../image/icon/phone.png" width="30px" height="30px">
+                </div>
+                <div class="liner">
+                    <img src="../image/icon/linear.png">
+                </div>
+                <div class="contactInfo">
+                    <span class="text">+86 (0755) 8696 0004</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="pic">
+                    <img src="../image/icon/wechat.png" width="30px" height="30px">
+                </div>
+                <div class="liner">
+                    <img src="../image/icon/linear.png">
+                </div>
+                <div class="contactInfo">
+                    <div class="qrcode">
+                        <img src="../image/icon/qrcode.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

@@ -8,13 +8,20 @@
   color: #fff; }
   .m-map ::-webkit-scrollbar {
     display: none; }
-  .m-map-menu {
+  .menu-wrapper {
     position: absolute;
     z-index: 2;
-    right: 0;
     top: 100px;
+    right: 0;
     width: 160px;
     height: 80%;
+    overflow: hidden;}
+  .m-map-menu {
+    position: relative;
+    z-index: 2;
+    /*right: 0;*/
+    width: 108%;
+    height: 105%;
     box-sizing: border-box;
     padding: 16px;
     padding-right: 0;
@@ -31,6 +38,7 @@
       background: rgba(255, 255, 255, 0.16);
       transition: all .5s; }
       .m-map-menu > li._current, .m-map-menu > li:hover {
+        transition: none;
         background: rgba(255, 255, 255, 0.4); }
       .m-map-menu > li._current {
         transform: translateX(-16px);
@@ -77,8 +85,7 @@
         .m-map-main > li > div > h2 {
           padding-top: 16px;
           font-size: 18px;
-          white-space: nowrap;
-          text-shadow: 0 0 10px #000, 0 0 10px #000; }
+          white-space: nowrap; }
           .m-map-main > li > div > h2 > span {
             display: block;
             margin-bottom: 6px;

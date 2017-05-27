@@ -2,20 +2,29 @@ $(function() { //底部导航
 	var open;
 	$('#focus >._nav').on('click', function(event) {
 		var $this = $(this);
-		if (!open) {
-			open = true;
-			$this.addClass('_open');
-			setTimeout(function() {
-				$(document).one('click', function(event) {
-					open = false;
-					$this.removeClass('_open');
-				});
-			}, 0);
-		} else {
-			if (event.target === $this.children('ul')[0]) {
-				event.stopPropagation();
+		if(this === event.target){
+			if(!open){
+				open = true;
+				$this.addClass('_open');
+			}else{
+				open = false;
+				$this.removeClass('_open');
 			}
 		}
+		// if (!open) {
+		// 	open = true;
+		// 	$this.addClass('_open');
+		// 	setTimeout(function() {
+		// 		$(document).one('click', function(event) {
+		// 			open = false;
+		// 			$this.removeClass('_open');
+		// 		});
+		// 	}, 0);
+		// } else {
+		// 	if (event.target === $this.children('ul')[0]) {
+		// 		event.stopPropagation();
+		// 	}
+		// }
 	});
 });
 
