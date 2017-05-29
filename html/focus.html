@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/reset.css">
-    <link rel="SHORTCUT ICON" href="../image/websiteIcon.ico">
+    <link rel="SHORTCUT ICON" href="../image/logo.png">
     <script src="../js/lib/jquery.js"></script>
     <script src="../js/worldScroll.js"></script>
     <script>
-            function toDetail(){
-                window.location.href = "detail.html";
-            }
+    function toDetail(src) {
+        window.location.href = src;
+    }
     </script>
     <title>主页</title>
 </head>
@@ -23,11 +23,10 @@
         <div class="left">
             <div class="worldIcon">
                 <a href="map.html">
-                    <image src="../image/world.png" alt="worldicon"></image>
+                    <image src="../image/world.png" alt="worldicon" class="scrollWorld"></image>
                 </a>
                 <span class="logo">
-                <!-- <img src="../image/logo.png" width="30px" height="50px"> -->
-                AGW
+                <img src="../image/logo.png" width="44px" height="50px" class="imglogo">
             </span>
             </div>
         </div>
@@ -36,7 +35,7 @@
                 <div class="rightLink">
                     <ul>
                         <li>
-                            <a href="detail.html">动态</a>
+                            <a href="focus.html">动态</a>
                         </li>
                         <li>
                             <a href="scroll.html">关于</a>
@@ -48,42 +47,32 @@
     </div>
     <div id="focus" style="height:calc(100vh - 100px);">
         <ul>
-            <li>
-                <div data-src="../image/jiazhou/jiazhou1.jpg" onclick="toDetail()"></div>
-                <h2>AGW SIBERIA RALLY -1<span>西伯利亚跨越拉力赛 -1</span></h2>
+            <li onclick="toDetail('detail1.html')"">
+                <div data-src="../image/silu/1.jpg"></div>
+                <h2>荣耀·丝路<span>触碰历史的心跳</span></h2>
             </li>
-            <li>
-                <div data-src="../image/jiazhou/jiazhou2.jpg"  onclick="toDetail()"></div>
-                <h2>AGW SIBERIA RALLY -2<span>西伯利亚跨越拉力赛 -2</span></h2>
+            <li  onclick="toDetail('detail2.html')">
+                <div data-src="../image/wurenqu/1.jpg"></div>
+                <h2>勇闯无人区<span>真实的荒野生存</span></h2>
             </li>
-            <li>
-                <div data-src="../image/jiazhou/jiazhou3.jpg"  onclick="toDetail()"></div>
-                <h2>AGW SIBERIA RALLY -3<span>西伯利亚跨越拉力赛 -3</span></h2>
+            <li  onclick="toDetail('detail3.html')">
+                <div data-src="../image/zhandouji/1.jpg"></div>
+                <h2>自驾传说级米格29战斗机<span>体验飞上平流层的极致快感</span></h2>
             </li>
-            <li>
-                <div data-src="../image/jiazhou/jiazhou4.jpg"  onclick="toDetail()"></div>
-                <h2>AGW SIBERIA RALLY -4<span>西伯利亚跨越拉力赛 -4</span></h2>
-            </li>
-            <li>
-                <div data-src="../image/jialebi/jialebi1.jpg"  onclick="toDetail()"></div>
-                <h2>AGW SIBERIA RALLY -5<span>西伯利亚跨越拉力赛 -5</span></h2>
-            </li>
-            <li>
-                <div data-src="../image/jialebi/jialebi2.jpg"  onclick="toDetail()"></div>
-                <h2>AGW SIBERIA RALLY -6<span>西伯利亚跨越拉力赛 -6</span></h2>
+            <li  onclick="toDetail('detail4.html')">
+                <div data-src="../image/yinni/1.jpg"></div>
+                <h2>印尼支教之旅<span>有爱的人 会获得爱</span></h2>
             </li>
         </ul>
         <div class="_prevnext">
             <i></i><i></i>
         </div>
         <div class="_nav">
-            <ul>
-                <li>西伯利亚跨越拉力赛 -1</li>
-                <li>西伯利亚跨越拉力赛 -2</li>
-                <li>西伯利亚跨越拉力赛 -3</li>
-                <li>西伯利亚跨越拉力赛 -4</li>
-                <li>西伯利亚跨越拉力赛 -5</li>
-                <li>西伯利亚跨越拉力赛 -6</li>
+            <ul class="_not_effect">
+                <li>荣耀·丝路</li>
+                <li>勇闯无人区</li>
+                <li>自驾传说级米格29战斗机</li>
+                <li>印尼支教之旅</li>
             </ul>
         </div>
     </div>

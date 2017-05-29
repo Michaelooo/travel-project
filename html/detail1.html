@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>内容详情页Demo</title>
+    <link type="text/css" href="../css/detail.css" rel="stylesheet" />
+    <link type="text/css" href="../css/reset.css" rel="stylesheet" />
+    <link rel="SHORTCUT ICON" href="../image/logo.png">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
+    <script type="text/javascript" src="../js/worldScroll.js"></script>
+    <script type="text/javascript" src="../js/detail.js"></script>
+</head>
+
+<body>
+    <div>
+        <!-- head -->
+        <div class="header">
+            <div class="left">
+                <!-- logo部分 -->
+                <div class="worldIcon">
+                    <a href="map.html">
+                        <image src="../image/world.png" alt="worldicon" class="scrollWorld"></image>
+                    </a>
+                    <span class="logo">
+		                <img src="../image/logo.png" width="44px" height="50px" class="imglogo">
+		            </span>
+                </div>
+            </div>
+            <!-- control button -->
+            <div class="button">
+                <img src="../image/icon/left.svg" border="0" width="30px" height="30px" id="previousButton" onMouseenter="this.src='../image/icon/left_1.svg'" onMouseleave="this.src='../image/icon/left.svg'">
+                <img src="../image/icon/close.svg" width="30px" height="30px" id="closeButton" onMouseenter="this.src='../image/icon/close_1.svg'" onMouseleave="this.src='../image/icon/close.svg'">
+                <img src="../image/icon/right.svg" width="30px" height="30px" id="nextButton" onMouseenter="this.src='../image/icon/right_1.svg'" onMouseleave="this.src='../image/icon/right.svg'">
+            </div>
+        </div>
+        <!-- main content -->
+        <div class="picContent" id="picContent">
+            <!-- pic -->
+            <div class="section">
+            <!-- article -->
+                <div class="spanText">
+                    <span>触碰历史的心跳</span>
+                    <div class="textWrapper">
+                        <p class="text">
+                            一缕丝绸，串起千年历史，一条商路，承载千年文化。“荣耀·丝路”跨境自驾游是一次跨越亚欧大陆，全程16000千米的长途自驾游项目。</p>
+                        <p class="text">
+                            “荣耀·丝路”将从丝绸之路的起点西安出发，经中亚三国、伊朗、土耳其、希腊，最终抵达古罗马帝国发源地意大利罗马。</p>
+                        <p class="text">
+                            一绵长而古老的丝路，在岁月的大漠孤烟中蜿蜒而来。</p>
+                        <p class="text">一路西去，我们将穿越戈壁沙漠，探索神秘罗布泊，陶醉于瑶池神仙美景，徜徉大美新疆；我们将探寻古丝绸之路地图上每一座令人抚卷而神往的驿站，重返苏莲托的柔情浪漫，感受拜占庭建筑的威严雄壮与天主教教皇皇宫的奢华圣洁... ...</p>
+                        <p class="text">漫漫征程，就像一次次历史的回放，历史的底片又将还原成真实的场景。</p>
+                        <p class="text">丝绸之路从来就不是一条固定的有形道路，从古至今，它代表的更是一种精神的力量。我们和生活与穿梭在这条路上的人们一样，有着美好的梦想、坚定的信念和澎湃不息的动力。</p>
+                    </div>
+                </div>
+                <div class="slide" data-original="../image/silu/1.jpg" width="100%" height="100%" style="opacity: 0.8;">
+                </div>
+                <div class="slide" data-original="../image/silu/2.jpg" width="100%" height="100%" style="opacity: 0.8;">
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer" id="footer">
+            <ul id="scrollMenu">
+                <li><a href="detail1.html">触碰历史的心跳</a></li>
+                <li><a href="detail2.html">真实的荒野生存</a></li>
+                <li><a href="detail3.html">体验飞上平流层的极致快感</a></li>
+                <li><a href="detail4.html">有爱的人 会获得爱</a></li>
+            </ul>
+        </div>
+        <!-- 全局遮罩 -->
+        <div class="loading">
+	        <div class="showLoading">
+	        	<img src="../image/icon-loading.png" alt="">
+	        </div>
+        </div>
+    </div>
+</body>
+
+</html>

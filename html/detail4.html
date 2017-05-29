@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>内容详情页Demo</title>
+    <link type="text/css" href="../css/detail.css" rel="stylesheet" />
+    <link type="text/css" href="../css/reset.css" rel="stylesheet" />
+    <link rel="SHORTCUT ICON" href="../image/logo.png">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
+    <script type="text/javascript" src="../js/worldScroll.js"></script>
+    <script type="text/javascript" src="../js/detail.js"></script>
+</head>
+
+<body>
+    <div>
+        <!-- head -->
+        <div class="header">
+            <div class="left">
+                <!-- logo部分 -->
+                <div class="worldIcon">
+                    <a href="map.html">
+                        <image src="../image/world.png" alt="worldicon" class="scrollWorld"></image>
+                    </a>
+                    <span class="logo">
+		                <img src="../image/logo.png" width="44px" height="50px" class="imglogo">
+		            </span>
+                </div>
+            </div>
+            <!-- control button -->
+            <div class="button">
+                <img src="../image/icon/left.svg" border="0" width="30px" height="30px" id="previousButton" onMouseenter="this.src='../image/icon/left_1.svg'" onMouseleave="this.src='../image/icon/left.svg'">
+                <img src="../image/icon/close.svg" width="30px" height="30px" id="closeButton" onMouseenter="this.src='../image/icon/close_1.svg'" onMouseleave="this.src='../image/icon/close.svg'">
+                <img src="../image/icon/right.svg" width="30px" height="30px" id="nextButton" onMouseenter="this.src='../image/icon/right_1.svg'" onMouseleave="this.src='../image/icon/right.svg'">
+            </div>
+        </div>
+        <!-- main content -->
+        <div class="picContent" id="picContent">
+            <div class="section">
+            <!-- article -->
+                <div class="spanText">
+                    <span>有爱的人 会获得爱</span>
+                    <div class="textWrapper">
+                        <p class="text">印尼，一个变换无穷的万花筒，这里是赤道上的翡翠，茂密的雨林，湿热的大地；包围你的是来自这颗星球的生命原始力量，是万物生长的无可抵抗，是人性纯真的赤子之光。</p>
+                        <p class="text">泗水著名的唐人街上，立着一座建于清朝光绪32年的孔庙，伴着祭祀的袅袅烟火，常有琅琅读书声在庙中环绕。</p>
+                        <p class="text">支教</p>
+                        <p class="text">是愿为太阳，在寻觅自己道路的同时，也能温暖他人。</p>
+                        <p class="text">是用最平常的心，给予我们的所有，在孩子们心底埋下一粒中华文化的种子，待有朝一日生根发芽。</p>
+                        <p class="text">是让孩子们的眼睛通过我们看到外面的世界，体会到一种不用言语却可以深刻感受到的爱。</p>
+                    </div>
+                </div>
+                <div class="slide" data-original="../image/yinni/1.jpg" width="100%" height="100%" style="opacity: 0.8;">
+                </div>
+                <div class="slide" data-original="../image/yinni/2.jpg" width="100%" height="100%" style="opacity: 0.8;">
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer" id="footer">
+            <ul id="scrollMenu">
+                <li><a href="detail1.html">触碰历史的心跳</a></li>
+                <li><a href="detail2.html">真实的荒野生存</a></li>
+                <li><a href="detail3.html">体验飞上平流层的极致快感</a></li>
+                <li><a href="detail4.html">有爱的人 会获得爱</a></li>
+            </ul>
+        </div>
+        <!-- 全局遮罩 -->
+        <div class="loading">
+	        <div class="showLoading">
+	        	<img src="../image/icon-loading.png" alt="">
+	        </div>
+        </div>
+    </div>
+</body>
+
+</html>

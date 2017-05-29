@@ -161,15 +161,15 @@ $(function() {
 		});
 	})();
 
-	//修改地图页面关闭图标样式
-	var _closeHtml = '<img src="../image/icon/_line.svg" width="50px" height="50px" class="closeButton">';
-	$('._close').append(_closeHtml);
-	$('._close').mouseenter(function(){
-		$(this).find('.closeButton').attr('src','../image/icon/_line_close.svg')
-	});
-	$('._close').mouseleave(function(){
-		$(this).find('.closeButton').attr('src','../image/icon/_line.svg')
-	});
+	//修改地图页面关闭图标样式 width="50px" height="50px" 
+	// var _closeHtml = '<img src="../image/icon/_line_close_off.png" class="closeButton">';
+	// $('._close').append(_closeHtml);
+	// $('._close').mouseenter(function(){
+	// 	$(this).find('.closeButton').attr('src','../image/icon/_line_close_on.png')
+	// });
+	// $('._close').mouseleave(function(){
+	// 	$(this).find('.closeButton').attr('src','../image/icon/_line_close_off.png')
+	// });
 	//初始化
 	switchover(0);
 });

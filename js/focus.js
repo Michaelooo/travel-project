@@ -6,6 +6,12 @@ $(function() { //底部导航
 			if(!open){
 				open = true;
 				$this.addClass('_open');
+				setTimeout(function() {
+				$('.header').one('click', function(event) {
+					open = false;
+					$this.removeClass('_open');
+				});
+			}, 0);
 			}else{
 				open = false;
 				$this.removeClass('_open');

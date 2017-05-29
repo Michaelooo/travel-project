@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>内容详情页Demo</title>
+    <link type="text/css" href="../css/detail.css" rel="stylesheet" />
+    <link type="text/css" href="../css/reset.css" rel="stylesheet" />
+    <link rel="SHORTCUT ICON" href="../image/logo.png">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <script type="text/javascript" src="../js/lib/jquery.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="../js/lib/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
+    <script type="text/javascript" src="../js/worldScroll.js"></script>
+    <script type="text/javascript" src="../js/detail.js"></script>
+</head>
+
+<body>
+    <div>
+        <!-- head -->
+        <div class="header">
+            <div class="left">
+                <!-- logo部分 -->
+                <div class="worldIcon">
+                    <a href="map.html">
+                        <image src="../image/world.png" alt="worldicon" class="scrollWorld"></image>
+                    </a>
+                    <span class="logo">
+		                <img src="../image/logo.png" width="44px" height="50px" class="imglogo">
+		            </span>
+                </div>
+            </div>
+            <!-- control button -->
+            <div class="button">
+                <img src="../image/icon/left.svg" border="0" width="30px" height="30px" id="previousButton" onMouseenter="this.src='../image/icon/left_1.svg'" onMouseleave="this.src='../image/icon/left.svg'">
+                <img src="../image/icon/close.svg" width="30px" height="30px" id="closeButton" onMouseenter="this.src='../image/icon/close_1.svg'" onMouseleave="this.src='../image/icon/close.svg'">
+                <img src="../image/icon/right.svg" width="30px" height="30px" id="nextButton" onMouseenter="this.src='../image/icon/right_1.svg'" onMouseleave="this.src='../image/icon/right.svg'">
+            </div>
+        </div>
+        <!-- main content -->
+        <div class="picContent" id="picContent">
+            <!-- pic -->
+            <div class="section">
+            <!-- article -->
+                <div class="spanText">
+                    <span>体验飞上平流层的极致快感</span>
+                    <div class="textWrapper">
+                        <p class="text">走过山川河流，看过万千世界，却仍想像小鸟一样遨游在蓝天之上，感受踏碎凌霄，放肆桀骜的高空激情。</p>
+                        <p class="text">世界上99.9％的人从未登上过现代化喷气式歼击机米格-29的机舱，而这次，您不仅坐在米格-29的机舱里，还将以超音速的速度攀越宇宙极限，飞抵太空边界，并跟随它完成各种高难特技的飞行。</p>
+                        <p class="text">这是一次人与自然的亲切交流，与地球的深度对话。</p>
+                        <p class="text">翱翔太空，俯瞰大千世界。光是漫游在大气层高空那一刻的记忆就足以铭刻一生，从大气层的高度俯瞰世界，宇宙那苍茫无垠的壮观景象、太阳那令人眩晕的光照、还有地球那奇丽美妙的蔚蓝……</p>
+                        <p class="text">这，肯定会是一生中最刺激的感受。</p>
+                    </div>
+                </div>
+                <div class="slide" data-original="../image/zhandouji/1.jpg" width="100%" height="100%" style="opacity: 0.8;">
+                </div>
+                <div class="slide" data-original="../image/zhandouji/2.jpg" width="100%" height="100%" style="opacity: 0.8;">
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer" id="footer">
+            <ul id="scrollMenu">
+                <li><a href="detail1.html">触碰历史的心跳</a></li>
+                <li><a href="detail2.html">真实的荒野生存</a></li>
+                <li><a href="detail3.html">体验飞上平流层的极致快感</a></li>
+                <li><a href="detail4.html">有爱的人 会获得爱</a></li>
+            </ul>
+        </div>
+        <!-- 全局遮罩 -->
+        <div class="loading">
+	        <div class="showLoading">
+	        	<img src="../image/icon-loading.png" alt="">
+	        </div>
+        </div>
+    </div>
+</body>
+
+</html>
