@@ -4,7 +4,7 @@ function refreshPage() {
 
 
 //设置滚动
-$(function() {
+$(function () {
     $("#slider").easySlider({
         slideSpeed: 500,
         paginationSpacing: "15px",

@@ -1,6 +1,6 @@
-$(function() {
+$(function () {
 	$('.loading').show();
-	setTimeout(function() {
+	setTimeout(function () {
 		$('.loading').hide();
 		$('#picContent').fullpage({
 			anchors: ['page1', 'page2', 'page3', 'page4'],
@@ -26,28 +26,28 @@ $(function() {
 
 		$spanText = $('.spanText');
 		$spanText.animate({
+			'opacity': 1
+		},
+			1000,
+			function () { });
+
+		$prev.click(function () {
+			$spanText.animate({
 				'opacity': 1
 			},
-			1000,
-			function() {});
-
-		$prev.click(function() {
-			$spanText.animate({
-					'opacity': 1
-				},
 				1000,
-				function() {});
+				function () { });
 			$.fn.fullpage.moveSlideLeft();
 		});
-		$next.click(function() {
+		$next.click(function () {
 			$spanText.animate({
-					'opacity': 1
-				},
+				'opacity': 1
+			},
 				1000,
-				function() {});
+				function () { });
 			$.fn.fullpage.moveSlideRight();
 		});
-		$close.click(function() {
+		$close.click(function () {
 			window.location.href = '../html/focus.html';
 		});
 		/**
@@ -65,8 +65,8 @@ $(function() {
 		//文字特效
 		var $spanTitle = $('.spanText >span');
 		var $textWrapper = $('.textWrapper');
-		var timer = setTimeout(function() {
-			$textWrapper.hover(function() {
+		var timer = setTimeout(function () {
+			$textWrapper.hover(function () {
 				clearTimeout(timer);
 				$spanTitle.animate({
 					'opacity': 0
@@ -75,7 +75,7 @@ $(function() {
 					'top': 0,
 					'height': 600
 				}, 500);
-			}, function() {
+			}, function () {
 				clearTimeout(timer);
 				$spanTitle.animate({
 					'opacity': 1
@@ -91,9 +91,9 @@ $(function() {
 		//点击li切换，加一个全局的loading
 		function _style_li() {
 			var $li = $('#footer >ul >li a');
-			$li.click(function() {
+			$li.click(function () {
 				$('.loading').show();
-				setTimeout(function() {
+				setTimeout(function () {
 					$('.loading').hide();
 				}, 700);
 			})
