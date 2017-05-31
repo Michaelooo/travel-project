@@ -26,25 +26,25 @@ $(function () {
 
 		$spanText = $('.spanText');
 		$spanText.animate({
-			'opacity': 1
-		},
+				'opacity': 1
+			},
 			1000,
-			function () { });
+			function () {});
 
 		$prev.click(function () {
 			$spanText.animate({
-				'opacity': 1
-			},
+					'opacity': 1
+				},
 				1000,
-				function () { });
+				function () {});
 			$.fn.fullpage.moveSlideLeft();
 		});
 		$next.click(function () {
 			$spanText.animate({
-				'opacity': 1
-			},
+					'opacity': 1
+				},
 				1000,
-				function () { });
+				function () {});
 			$.fn.fullpage.moveSlideRight();
 		});
 		$close.click(function () {

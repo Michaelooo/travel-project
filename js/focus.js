@@ -1,18 +1,18 @@
-$(function() { //底部导航
+$(function () { //底部导航
 	var open;
-	$('#focus >._nav').on('click', function(event) {
+	$('#focus >._nav').on('click', function (event) {
 		var $this = $(this);
-		if(this === event.target){
-			if(!open){
+		if (this === event.target) {
+			if (!open) {
 				open = true;
 				$this.addClass('_open');
-				setTimeout(function() {
-				$('.header').one('click', function(event) {
-					open = false;
-					$this.removeClass('_open');
-				});
-			}, 0);
-			}else{
+				setTimeout(function () {
+					$('.header').one('click', function (event) {
+						open = false;
+						$this.removeClass('_open');
+					});
+				}, 0);
+			} else {
 				open = false;
 				$this.removeClass('_open');
 			}
@@ -36,9 +36,9 @@ $(function() { //底部导航
 
 
 
-$(function() { //鼠标跟随
+$(function () { //鼠标跟随
 	var bCR;
-	$('#focus >ul').on('mousemove', '>li._current', function(e) {
+	$('#focus >ul').on('mousemove', '>li._current', function (e) {
 		var $this = $(this),
 			$text = $this.children('h2');
 		if (!bCR) {
@@ -49,7 +49,7 @@ $(function() { //鼠标跟随
 		$text.addClass('_no-transition');
 		$text[0].style.transform = 'translate(' + tX + 'px,' + tY + 'px)';
 		$text[0].style.webkitTransform = 'translate(' + tX + 'px,' + tY + 'px)';
-	}).on('mouseout', '>li._current', function() {
+	}).on('mouseout', '>li._current', function () {
 		var $text = $(this).children('h2');
 		$text.removeClass('_no-transition');
 		$text[0].style.transform = '';
@@ -60,13 +60,13 @@ $(function() { //鼠标跟随
 
 
 
-$(function() { //切换
+$(function () { //切换
 	var $li = $('#focus >ul >li'),
 		$li_nav = $('#focus >._nav >ul >li');
 	var curIndex = 0,
 		lastIndex = $li.length - 1;
 
-	var switchover = function(index) {
+	var switchover = function (index) {
 		$li.removeClass('_current').eq(index).addClass('_current');
 		$li_nav.removeClass('_current').eq(index).addClass('_current');
 		var prevIndex = index === 0 ? lastIndex : index - 1,
@@ -74,11 +74,11 @@ $(function() { //切换
 		$li.eq(index).children('[data-src]')
 			.add($li.eq(prevIndex).children('[data-src]'))
 			.add($li.eq(nextIndex).children('[data-src]'))
-			.each(function() {
+			.each(function () {
 				var $this = $(this);
 				var src = $this.data('src');
 				var $img = $('<img>');
-				$img[0].onload = function() {
+				$img[0].onload = function () {
 					$this.addClass('_loaded').removeAttr('data-src')
 						.css('backgroundImage', 'url(' + src + ')');
 				};
@@ -87,17 +87,17 @@ $(function() { //切换
 	};
 
 	//事件
-	$('#focus >._prevnext >i:first').on('click', function() {
+	$('#focus >._prevnext >i:first').on('click', function () {
 		var prevIndex = curIndex === 0 ? lastIndex : curIndex - 1;
 		switchover(prevIndex);
 		curIndex = prevIndex;
 	});
-	$('#focus >._prevnext >i:last').on('click', function() {
+	$('#focus >._prevnext >i:last').on('click', function () {
 		var nextIndex = curIndex === lastIndex ? 0 : curIndex + 1;
 		switchover(nextIndex);
 		curIndex = nextIndex;
 	});
-	$('#focus >._nav >ul').on('click', '>li:not(._current)', function() {
+	$('#focus >._nav >ul').on('click', '>li:not(._current)', function () {
 		switchover($(this).index());
 	});
 
