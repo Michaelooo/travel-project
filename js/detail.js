@@ -65,28 +65,23 @@ $(function () {
 		//文字特效
 		var $spanTitle = $('.spanText >span');
 		var $textWrapper = $('.textWrapper');
-		var timer = setTimeout(function () {
-			$textWrapper.hover(function () {
-				clearTimeout(timer);
-				$spanTitle.animate({
-					'opacity': 0
-				}, 500);
-				$textWrapper.animate({
-					'top': 0,
-					'height': 600
-				}, 500);
-			}, function () {
-				clearTimeout(timer);
-				$spanTitle.animate({
-					'opacity': 1
-				}, 500);
-				$textWrapper.animate({
-					'top': 60,
-					'height': 150
-				}, 500);
-			});
-		}, 0);
-
+		$textWrapper.hover(function () {
+			$spanTitle.stop().animate({
+				'opacity': 0
+			}, 500);
+			$textWrapper.stop().animate({
+				'top': 0,
+				'height': 600
+			}, 500);
+		}, function () {
+			$spanTitle.stop().animate({
+				'opacity': 1
+			}, 500);
+			$textWrapper.stop().animate({
+				'top': 60,
+				'height': 150
+			}, 500);
+		});
 
 		//点击li切换，加一个全局的loading
 		function _style_li() {
