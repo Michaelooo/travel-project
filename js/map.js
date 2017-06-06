@@ -10,6 +10,14 @@ $(function() {
 		var left = $box.outerWidth() / 2 - parseInt($links.eq(index).css('left')),
 			top = $box.outerHeight() / 2 - parseInt($links.eq(index).css('top'));
 		$buttons.removeClass('_current').eq(index).addClass('_current');
+
+		//bug修复：点击地图中的li，右侧菜单列表滚动至中间位置
+		var scrollTo = $(".m-map-menu >li._current").offset().top -136 ;
+		$('.m-map-menu').animate({
+			'scrollTop': scrollTo
+		},500);
+		
+
 		$main.css({
 			left: left,
 			top: top

@@ -59,6 +59,7 @@ li {
     left: -30px;
     top: -30px;
     z-index: 10;
+    animation-play-state: paused;
 }
 
 .logo {
@@ -123,6 +124,17 @@ li {
 .header .right .rightWrap img {
     width: 48px;
     height: 48px;
+}
+
+.content {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .bigBox{

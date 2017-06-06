@@ -1,9 +1,8 @@
 // 这个脚本只用于地图滚动效果
 $(function() {
-	var $world = $('.header .left .worldIcon >a >img.scrollWorld');
-	var $logo = $('.header .left .worldIcon .logo .imglogo');
+	var $world = $('.leftHeader .worldIcon >a >img.scrollWorld');
+	var $logo = $('.leftHeader .worldIcon .logo .imglogo');
 	$world.hover(function(){
-		// $world.addClass('actived');
 		$world.stop().animate({'width': 150,'height':150,'opacity':0.6}, 200);
 		$logo.stop().animate({'opacity':0.5}, 200);
 	},function(){

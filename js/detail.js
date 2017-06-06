@@ -63,7 +63,7 @@ $(function () {
 		// });
 
 		//文字特效
-		var $spanTitle = $('.spanText >span');
+		var $spanTitle = $('.spanText >.spanTitle >span');
 		var $textWrapper = $('.textWrapper');
 		$textWrapper.hover(function () {
 			$spanTitle.stop().animate({

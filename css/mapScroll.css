@@ -1,31 +1,38 @@
 body,html {width: 100%;height: 100%;}
 body {font-family: Arial, Helvetica, sans-serif}
 li {list-style: none;}
-.header {
+{
     position: relative;
     width: 100%;
     height: 100px;
     z-index: 1000;
 }
 
-.header a {
+a {
     position: relative;
     display: block;
     text-decoration: none;
     /*color: white;*/
 }
 
-.header a:hover {
+a:hover {
     color: white;
 }
 
 
-.header .left {
+.leftHeader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+/*    background-color: #111111;
+    border-radius: 10%;*/
+    right: 0;
+    top:0;
+    z-index: 1000;
     display: inline-block;
-    width: 33.3%;
 }
 
-.header .left .worldIcon img.scrollWorld {
+.leftHeader .worldIcon img.scrollWorld {
     position: absolute;
     left: -30px;
     top: -30px;
@@ -36,11 +43,8 @@ li {list-style: none;}
     animation: focus-loading 2s infinite linear;
 }
 
-.header .left .worldIcon img:hover {
-    position: absolute;
-    left: -30px;
-    top: -30px;
-    z-index: 10;
+.leftHeader .worldIcon img:hover {
+    animation-play-state: paused;
 }
 
 .logo {
@@ -56,8 +60,13 @@ li {list-style: none;}
 
 
 
-.header .right {
-    float: right;
+.right {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    right: 0;
+    top:0;
+    z-index: 1000;
 }
 
 .rightContent {
@@ -73,7 +82,7 @@ li {list-style: none;}
     float: right;
 }
 
-.header .right ul {
+.right ul {
     display: block;
     margin-bottom: 0;
     font-size: 16px;
@@ -81,12 +90,12 @@ li {list-style: none;}
     list-style: none;
 }
 
-.header .right ul li {
+.right ul li {
     float: left;
     position: relative;
 }
 
-.header .right ul li a {
+.right ul li a {
     display: block;
     padding: 10px 20px;
     color: #C2C1C1;
@@ -99,11 +108,11 @@ li {list-style: none;}
     /*color:#000;*/
 }
 
-.header .right ul li a:hover {
+.right ul li a:hover {
     color: white;
 }
 
-.header .right .rightWrap img {
+.right .rightWrap img {
     width: 48px;
     height: 48px;
 }
