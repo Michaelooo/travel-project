@@ -150,7 +150,7 @@
 
 #focus>ul>li>div {
     position: absolute;
-    left: 0%;
+    left: 20%;
     top: 50%;
     height: 100%;
     width: 0;
@@ -197,7 +197,7 @@
 }
 
 #focus>ul>li._current>div {
-    width: 40%;
+    width: 60%;
 }
 
 #focus>ul>li._current>div::after {
@@ -248,11 +248,11 @@
 
 #focus>ul>li:hover>div {
     transition: all 1.4s;
-    width: 60%;
+    width: 45%;
     opacity: .5;
-    -webkit-transform: translate3d(15%, -50%, 0);
-    -ms-transform: translate3d(15%, -50%, 0);
-    transform: translate3d(15%, -50%, 0);
+    -webkit-transform: translate3d(-35%, -50%, 0);
+    -ms-transform: translate3d(-35%, -50%, 0);
+    transform: translate3d(-35%, -50%, 0);
 }
 
 #focus>._prevnext>i {

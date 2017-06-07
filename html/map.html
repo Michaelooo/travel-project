@@ -7,9 +7,33 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="SHORTCUT ICON" href="../image/logo.png">
     <script src="../js/lib/jquery.js"></script>
-    <script src="../js/worldScroll.js"></script>
-    <script src="../js/lib/jquery.js"></script>
     <title>我们的产品</title>
+    <script type="text/javascript">
+        //对于地图页需要做特殊处理
+        $(function () {
+            $world = $('.leftHeader .worldIcon >a >img.scrollWorld');
+            $logo = $('.leftHeader .worldIcon .logo .imglogo');
+            $world.hover(function () {
+                $world.stop().animate({
+                    'width': 150,
+                    'height': 150,
+                    'opacity': 0.6
+                }, 200);
+                $logo.stop().animate({
+                    'opacity': 0.5
+                }, 200);
+            }, function () {
+                $world.stop().animate({
+                    'width': 100,
+                    'height': 100,
+                    'opacity': 0.2
+                }, 200);
+                $logo.stop().animate({
+                    'opacity': 1
+                }, 200);
+            });
+        });
+    </script>
 </head>
 
 <body style="height:calc(100vh);margin-top:0px">
@@ -62,107 +86,128 @@
             <li style="top:1095px;left:1429px">
                 <div>
                     <div style="background-image:url(../image/temp/namibiya/1_small.jpg)"></div>
-                    <h2><span>纳米比亚&南非<br>Namibia&South Africa</span>无疆之旅</h2></div>
+                    <h2><span>纳米比亚&南非<br>Namibia&South Africa</span>无疆之旅</h2>
+                </div>
             </li>
             <li style="top:222px;left:1403px">
                 <div>
                     <div style="background-image:url(../image/temp/eastern3/1_small.jpg)"></div>
-                    <h2><span>东欧三国<br>Estonia&Latvia&Lithuania</span>赤子之旅</h2></div>
+                    <h2><span>东欧三国<br>Estonia&Latvia&Lithuania</span>赤子之旅</h2>
+                </div>
             </li>
             <li style="top:610px;left:2122px">
                 <div>
                     <div style="background-image:url(../image/temp/niboer/1_small.jpg)"></div>
-                    <h2><span>尼泊尔&不丹<br>Nepal&Bhutan</span>粹心之旅</h2></div>
+                    <h2><span>尼泊尔&不丹<br>Nepal&Bhutan</span>粹心之旅</h2>
+                </div>
             </li>
             <li style="top:514px;left:1219px">
                 <div>
                     <div style="background-image:url(../image/temp/moluoge/1_small.jpg)"></div>
-                    <h2><span>摩洛哥<br>Morocco</span>探秘之旅</h2></div>
+                    <h2><span>摩洛哥<br>Morocco</span>探秘之旅</h2>
+                </div>
             </li>
             <li style="top:271px;left:1167px">
                 <div>
                     <div style="background-image:url(../image/temp/ireland/1_small.jpg)"></div>
-                    <h2><span>爱尔兰<br>Ireland</span>寻风之旅</h2></div>
+                    <h2><span>爱尔兰<br>Ireland</span>寻风之旅</h2>
+                </div>
             </li>
             <li style="top:871px;left:1646px">
                 <div>
                     <div style="background-image:url(../image/temp/tansanniya/1_small.jpg)"></div>
-                    <h2><span>坦桑尼亚<br>Tanzania</span>犷野之旅</h2></div>
+                    <h2><span>坦桑尼亚<br>Tanzania</span>犷野之旅</h2>
+                </div>
             </li>
             <li style="top:342px;left:1667px">
                 <div>
                     <div style="background-image:url(../image/temp/outgaojiasuo/1_small.jpg)"></div>
-                    <h2><span>外高加索<br>Georgia&Armenia</span>心灵之旅</h2></div>
+                    <h2><span>外高加索<br>Georgia&Armenia</span>心灵之旅</h2>
+                </div>
             </li>
             <li style="top:377px;left:1474px">
                 <div>
                     <div style="background-image:url(../image/temp/xila/1_small.jpg)"></div>
-                    <h2><span>土耳其、希腊<br>Turkey&Greece</span>星月之旅</h2></div>
+                    <h2><span>土耳其、希腊<br>Turkey&Greece</span>星月之旅</h2>
+                </div>
             </li>
             <li style="top:1142px;left:248px">
                 <div>
                     <div style="background-image:url(../image/temp/bolijiniya/1_small.jpg)"></div>
-                    <h2><span>法属波利尼西亚<br>French Polynesia</span>愜心之旅</h2></div>
+                    <h2><span>法属波利尼西亚<br>French Polynesia</span>愜心之旅</h2>
+                </div>
             </li>
             <li style="top:175px;left:185px">
                 <div>
                     <div style="background-image:url(../image/temp/alsj/1_small.jpg)"></div>
-                    <h2><span>阿拉斯加<br>Alaska,America</span>放逐之旅</h2></div>
+                    <h2><span>阿拉斯加<br>Alaska,America</span>放逐之旅</h2>
+                </div>
             </li>
             <li style="top:523px;left:1548px">
                 <div>
                     <div style="background-image:url(../image/temp/aiji/1_small.jpg)"></div>
-                    <h2><span>埃及&约旦<br>Egypt&Jordan</span>回音之旅</h2></div>
+                    <h2><span>埃及&约旦<br>Egypt&Jordan</span>回音之旅</h2>
+                </div>
             </li>
             <li style="top:134px;left:1084px">
                 <div>
                     <div style="background-image:url(../image/temp/iceland/1_small.jpg)"></div>
-                    <h2><span>冰岛<br>Iceland</span>遗世之旅</h2></div>
+                    <h2><span>冰岛<br>Iceland</span>遗世之旅</h2>
+                </div>
             </li>
             <li style="top:171px;left:2023px">
                 <div>
                     <div style="background-image:url(../image/temp/eluosi/1_small.jpg)"></div>
-                    <h2><span>俄罗斯<br>Russia</span>燃情之旅</h2></div>
+                    <h2><span>俄罗斯<br>Russia</span>燃情之旅</h2>
+                </div>
             </li>
             <li style="top:540px;left:575px">
                 <div>
                     <div style="background-image:url(../image/temp/cube/1_small.jpg)"></div>
-                    <h2><span>古巴<br>Cuba</span>古典之旅</h2></div>
+                    <h2><span>古巴<br>Cuba</span>古典之旅</h2>
+                </div>
             </li>
             <li style="top:682px;left:526px">
                 <div>
                     <div style="background-image:url(../image/temp/jialebi/1_small.jpg)"></div>
-                    <h2><span>加勒比海<br>Kalibs</span>浮世之旅</h2></div>
+                    <h2><span>加勒比海<br>Kalibs</span>浮世之旅</h2>
+                </div>
             </li>
             <li style="top:516px;left:147px">
                 <div>
                     <div style="background-image:url(../image/temp/jiazhou/1_small.jpg)"></div>
-                    <h2><span>加利福尼亚<br>California,America</span>自由之旅</h2></div>
+                    <h2><span>加利福尼亚<br>California,America</span>自由之旅</h2>
+                </div>
             </li>
             <li style="top:960px;left:1810px">
                 <div>
                     <div style="background-image:url(../image/temp/madajiasijia/1_small.jpg)"></div>
-                    <h2><span>马达加斯加&塞舌尔<br>Madagascar&Seychelles</span>斑斓之旅</h2></div>
+                    <h2><span>马达加斯加&塞舌尔<br>Madagascar&Seychelles</span>斑斓之旅</h2>
+                </div>
             </li>
             <li style="top:598px;left:355px">
                 <div>
                     <div style="background-image:url(../image/temp/moxige/1_small.jpg)"></div>
-                    <h2><span>墨西哥<br>Mexico</span>纵情之旅</h2></div>
+                    <h2><span>墨西哥<br>Mexico</span>纵情之旅</h2>
+                </div>
             </li>
             <li style="top:466px;left:1818px">
                 <div>
                     <div style="background-image:url(../image/temp/1lang/1_small.jpg)"></div>
-                    <h2><span>伊朗<br>Iran</span>文明之旅</h2></div>
+                    <h2><span>伊朗<br>Iran</span>文明之旅</h2>
+                </div>
             </li>
             <li style="top:423px;left:1319px">
                 <div>
                     <div style="background-image:url(../image/temp/italy/1_small.jpg)"></div>
-                    <h2><span>意大利<br>Italy</span>复兴之旅</h2></div>
+                    <h2><span>意大利<br>Italy</span>复兴之旅</h2>
+                </div>
             </li>
             <li style="top:298px;left:1483px">
                 <div>
                     <div style="background-image:url(../image/temp/east3_aodili/1_small.jpg)"></div>
-                    <h2><span>中欧三国<br>Czech&Austria&Hungary</span>浪漫之旅</h2></div>
+                    <h2><span>中欧三国<br>Czech&Austria&Hungary</span>浪漫之旅</h2>
+                </div>
             </li>
         </ul>
         <ul class="m-map-detail">
@@ -2199,9 +2244,12 @@
     <div class="m-map-fullPage">
         <ul></ul>
         <div class="_btn">
-            <img src="../image/icon/left.svg" border="0" width="30px" height="30px" id="previousButton" onMouseenter="this.src='../image/icon/left_1.svg'" onMouseleave="this.src='../image/icon/left.svg'">
-            <img src="../image/icon/close.svg" width="30px" height="30px" id="closeButton" onMouseenter="this.src='../image/icon/close_1.svg'" onMouseleave="this.src='../image/icon/close.svg'">
-            <img src="../image/icon/right.svg" width="30px" height="30px" id="nextButton" onMouseenter="this.src='../image/icon/right_1.svg'" onMouseleave="this.src='../image/icon/right.svg'">
+            <img src="../image/icon/left.svg" border="0" width="30px" height="30px" id="previousButton" onMouseenter="this.src='../image/icon/left_1.svg'"
+                onMouseleave="this.src='../image/icon/left.svg'">
+            <img src="../image/icon/close.svg" width="30px" height="30px" id="closeButton" onMouseenter="this.src='../image/icon/close_1.svg'"
+                onMouseleave="this.src='../image/icon/close.svg'">
+            <img src="../image/icon/right.svg" width="30px" height="30px" id="nextButton" onMouseenter="this.src='../image/icon/right_1.svg'"
+                onMouseleave="this.src='../image/icon/right.svg'">
         </div>
     </div>
     <script src="../js/map.js"></script>
