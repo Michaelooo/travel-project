@@ -78,11 +78,11 @@ $(function() {
     浮动效果实现
      */
     $("#right").hover(function() {
-        $(this).animate({
+        $(this).stop().animate({
             right: "0px"
         }, 200);
     }, function() {
-        $(this).animate({
+        $(this).stop().animate({
             right: "-200px"
         }, 200);
     });

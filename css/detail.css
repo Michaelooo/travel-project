@@ -192,14 +192,15 @@ body {
     /*height: 20px;*/
     line-height: 22px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 1px #white;
+    /*text-shadow: 1px 1px 1px white;*/
 }
 
 
 .slide {
     width: 100%;
     height: 100%;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /*底部链接部分*/

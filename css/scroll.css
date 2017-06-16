@@ -159,8 +159,8 @@ li {
 
 .scrollWrapper {
     width: 700px;
-    height: 600px;
-    margin: 0 auto;
+    height: 90%;
+    margin: 10px auto;
     /*background-image: url("../image/blackboard.png");*/
     opacity:1;
     background-size: 100% 100%;
