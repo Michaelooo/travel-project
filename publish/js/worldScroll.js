@@ -1,1 +1,0 @@
-$(function(){var b=$(".header .left .worldIcon >a >img.scrollWorld");var a=$(".header .left .worldIcon .logo .imglogo");b.hover(function(){b.stop().animate({"width":150,"height":150,"opacity":0.6},200);a.stop().animate({"opacity":0.5},200)},function(){b.stop().animate({"width":100,"height":100,"opacity":0.2},200);a.stop().animate({"opacity":1},200)})});

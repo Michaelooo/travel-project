@@ -52,13 +52,6 @@
 
 $(function() {
     var obj = $('#scrollText');
-    // obj.animate({
-    //         'top':-500
-    //     },
-    //     20000,
-    //     function() {
-    //         /* stuff to do after animation is complete */
-    //     });
     var timer = setInterval(function(){
         var _obj = $('#scrollText');
         var _scrolltop = _obj.scrollTop()+1;

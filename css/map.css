@@ -109,13 +109,13 @@
     .m-map-detail > li._open {
       transform: scale(1);
       opacity: 1; }
-    .m-map-detail > li > ._left {
-      /*float: left;
+    /*.m-map-detail > li > ._left {
+      float: left;
       width: 40%;
       height: 100%;
       overflow: auto;
-      box-sizing: border-box;*/
-      }
+      box-sizing: border-box;
+      }*/
     .m-map-detail > li > ._right {
       position: relative;
       float: right;
@@ -146,30 +146,35 @@
         display: none; }
     .m-map-detail > li > ._close {
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 25px;
-      height: 25px;
+      top: 15px;
+      right: 10px;
       cursor: pointer;
-      transition: all .5s;
-      background: url(../image/icon/_line_close_off.png) no-repeat center;;}
+      font-size: 18px;
+      transition: all .4s;
+      opacity: 0.5;
+      /*background: url(../image/icon/_line_close_off.png) no-repeat center;*/
+      }
       .m-map-detail > li > ._close:hover {
-        width: 45px;
+        /*width: 45px;
         height: 45px;
-        background: url(../image/icon/_line_close_on.png) no-repeat center; }
+        background: url(../image/icon/_line_close_on.png) no-repeat center; */
+        opacity: 1;
+        }
     .m-map-detail > li > ._btn {
       position: absolute;
-      bottom: 0px;
-      right: 0px;
-      width: 45px;
-      height: 45px;
+      font-size: 18px;
+      bottom: 15px;
+      right: 10px;
+      opacity: 0.5;
       cursor: pointer;
-      transition: all .5s;
-      background: url(../image/icon/_line_open_off.png) no-repeat center;
+      transition: all .4s;
+      /*background: url(../image/icon/_line_open_off.png) no-repeat center;*/
       /* background: rgba(0, 0, 0, 0.1); */ }
       .m-map-detail > li > ._btn:hover {
         /*background: rgba(0, 0, 0, 0.2);*/
-        background: url(../image/icon/_line_open_on.png) no-repeat center; }
+        /*background: url(../image/icon/_line_open_on.png) no-repeat center; */
+        opacity: 1;
+        }
       /*.m-map-detail > li > ._btn::after {
         content: "";
         display: block;

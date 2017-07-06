@@ -302,8 +302,8 @@ body {
     width: 48px;
     height: 48px;
     background: url(../image/icon-loading.png) center no-repeat;
-    -webkit-animation: focus-loading 2s infinite linear;
-    animation: focus-loading 2s infinite linear;}
+    -webkit-animation: focus-loading 4s infinite linear;
+    animation: focus-loading 4s infinite linear;}
 }
 
 @-webkit-keyframes focus-loading {
